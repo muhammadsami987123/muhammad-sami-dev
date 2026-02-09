@@ -248,6 +248,14 @@ Using **Kafka** and **DigitalOcean Kubernetes (DOKS)**, I architect systems that
 
 ---
 
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+You are free to use, modify, and distribute this software as long as you include the original copyright and license notice in any copies or substantial portions of the software.
+
+---
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%">
   <p align="center">
