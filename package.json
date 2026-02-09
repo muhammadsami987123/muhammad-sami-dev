@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhammadsami987123/muhammad-sami-dev.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
