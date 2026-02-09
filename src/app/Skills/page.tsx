@@ -13,7 +13,6 @@ import {
   FiTerminal,
   FiCloud,
   FiZap,
-  FiTrendingUp,
 } from 'react-icons/fi';
 import {
   SiTailwindcss,
