@@ -98,14 +98,14 @@ const getColorClasses = (color: string) => {
 
 export default function Services() {
     return (
-        <section className="py-24 relative overflow-hidden bg-white/50 dark:bg-zinc-900/50">
+        <section className="py-20 lg:py-28 relative overflow-hidden bg-white/50 dark:bg-zinc-900/50">
             {/* Background Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[20%] left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -119,7 +119,7 @@ export default function Services() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
                     >
                         Engineered <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Solutions.</span>
                     </motion.h2>
@@ -128,9 +128,9 @@ export default function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg"
+                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
                     >
-                        Specialized services focused on bridging the gap between sophisticated software architecture and autonomous intelligence.
+                        Specialized services bridging the gap between sophisticated software architecture and autonomous intelligence.
                     </motion.p>
                 </div>
 
@@ -145,15 +145,15 @@ export default function Services() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className={`group relative p-8 rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
+                                className={`group relative p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
                             >
-                                <div className={`w-14 h-14 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:scale-110 group-hover:text-white transition-all duration-500 ${style.iconText} ${style.iconBg}`}>
+                                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 shadow-sm group-hover:scale-110 group-hover:text-white transition-all duration-500 ${style.iconText} ${style.iconBg}`}>
                                     {service.icon}
                                 </div>
-                                <h3 className={`text-xl font-bold text-zinc-900 dark:text-white mb-4 transition-colors ${style.titleHover}`}>
+                                <h3 className={`text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4 transition-colors ${style.titleHover}`}>
                                     {service.title}
                                 </h3>
-                                <p className="text-zinc-500 dark:text-zinc-400 text-[15px] leading-relaxed mb-8">
+                                <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-[15px] leading-relaxed mb-6 sm:mb-8 font-medium">
                                     {service.description}
                                 </p>
 

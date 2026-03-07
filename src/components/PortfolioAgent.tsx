@@ -60,7 +60,7 @@ export default function PortfolioAgent() {
 
     return (
         <>
-            <div className="fixed bottom-6 right-6 z-[100]">
+            <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100]">
                 <AnimatePresence>
                     {!isOpen && (
                         <motion.button
@@ -70,12 +70,12 @@ export default function PortfolioAgent() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             onClick={() => setIsOpen(true)}
-                            className="group relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transition-all duration-300"
+                            className="group relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transition-all duration-300"
                         >
                             <div className="absolute inset-0 rounded-full border-2 border-white/20 border-t-white/50 animate-[spin_8s_linear_infinite]" />
-                            <FiMessageCircle size={28} className="relative z-10" />
+                            <FiMessageCircle className="relative z-10 text-xl md:text-[28px]" />
 
-                            <span className="absolute right-full mr-4 py-2 px-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 text-xs font-bold text-zinc-900 dark:text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0 shadow-xl">
+                            <span className="absolute right-full mr-4 py-2 px-4 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 text-xs font-bold text-zinc-900 dark:text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0 shadow-xl hidden md:block">
                                 Chat with AI Agent
                             </span>
                         </motion.button>

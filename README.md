@@ -195,6 +195,8 @@ Using **Kafka** and **DigitalOcean Kubernetes (DOKS)**, I architect systems that
 
 ## ⌚ Professional Timeline
 
+- **Founder & Lead Architect** | `MARSA Empower` (2025 – Present)
+  - *Architected a sophisticated multi-agent backend managing 115+ digital FTEs and autonomous agents for a comprehensive women's empowerment platform.*
 - **Founder & Lead Architect** | `CodePulse Innovations` (2025 – Present)
   - *Launched [FolioGenerator.com](https://foliogenerator.com), an AI-driven platform for rapid portfolio synthesis.*
 - **Senior AI Agent Engineer** | `Global Intelligence Solutions` (2024 – Present)

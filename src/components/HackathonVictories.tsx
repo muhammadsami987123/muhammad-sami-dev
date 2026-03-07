@@ -8,23 +8,23 @@ import { hackathonProjects } from '@/data/hackathon-projects';
 
 export default function HackathonVictories() {
     return (
-        <section className="py-24 bg-zinc-50 dark:bg-zinc-950/50 relative overflow-hidden" id="hackathons">
+        <section className="py-20 lg:py-28 bg-zinc-50 dark:bg-zinc-950/50 relative overflow-hidden" id="hackathons">
             {/* Decorative background elements */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-12 sm:mb-16">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/10 text-blue-600 dark:text-blue-400 font-bold text-xs tracking-widest uppercase mb-4 border border-blue-600/20 shadow-sm"
+                        className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-blue-600/10 text-blue-600 dark:text-blue-400 font-bold text-[10px] sm:text-xs tracking-widest uppercase mb-4 border border-blue-600/20 shadow-sm"
                     >
                         <FiAward className="text-blue-500" /> Proven Excellence
                     </motion.div>
                     <motion.h2
-                        className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -32,18 +32,18 @@ export default function HackathonVictories() {
                         Award-Winning <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AI Architectures.</span>
                     </motion.h2>
                     <motion.p
-                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed"
+                        className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                     >
-                        Setting the technical benchmark across the PIAIC ecosystem. High-performance systems
-                        recognized for architectural depth, scalability, and AI innovation.
+                        Setting technical benchmarks across the ecosystem. High-performance systems
+                        recognized for architectural depth and AI innovation.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
                     {hackathonProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
@@ -51,13 +51,13 @@ export default function HackathonVictories() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.15, duration: 0.5 }}
-                            className="group relative bg-white dark:bg-zinc-900 rounded-[2.5rem] overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex flex-col"
+                            className="group relative bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 flex flex-col"
                         >
                             <Link href={`/hackathon/${project.slug}`} className="absolute inset-0 z-10" />
 
-                            <div className="absolute top-6 left-6 z-20">
-                                <div className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-2xl shadow-blue-600/40 border border-white/10 backdrop-blur-sm">
-                                    <FiAward size={12} /> {project.achievement}
+                            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20">
+                                <div className="flex items-center gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 bg-blue-600 text-white text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-2xl shadow-blue-600/40 border border-white/10 backdrop-blur-sm">
+                                    <FiAward size={10} className="sm:size-[12px]" /> {project.achievement}
                                 </div>
                             </div>
 
@@ -71,11 +71,11 @@ export default function HackathonVictories() {
                                 />
                             </div>
 
-                            <div className="p-8 relative z-20 flex-1 flex flex-col">
-                                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <div className="p-5 sm:p-6 relative z-20 flex-1 flex flex-col">
+                                <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-2 sm:mb-3 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3 font-medium">
+                                <p className="text-zinc-500 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 line-clamp-3 font-medium">
                                     {project.description}
                                 </p>
 
@@ -83,14 +83,14 @@ export default function HackathonVictories() {
                                     <div className="h-1 flex-1 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
                                         <div className="h-full bg-blue-600 w-[92%]"></div>
                                     </div>
-                                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
+                                    <span className="text-[9px] sm:text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
                                         {project.benchmark}
                                     </span>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2 mb-8">
+                                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                                     {project.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 text-[10px] uppercase font-bold tracking-wider rounded-lg border border-zinc-200 dark:border-zinc-700/50">
+                                        <span key={tag} className="px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 text-[9px] sm:text-[10px] uppercase font-bold tracking-wider rounded-lg border border-zinc-200 dark:border-zinc-700/50">
                                             {tag}
                                         </span>
                                     ))}

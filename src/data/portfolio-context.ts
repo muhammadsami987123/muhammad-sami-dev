@@ -36,11 +36,12 @@ Your role is to represent Muhammad Sami professionally, answering questions abou
 - GitHub: https://github.com/muhammadsami987123
 
 **Professional Experience:**
-1. **Founder, CodePulse Innovations (June 2025 – Present)**: Launched FolioGenerator.com. Architected full-stack app.
-2. **Senior AI Agent Engineer, Global Intelligence Solutions (2024 – Present)**: Spearheading MCP and RAG paradigms.
-3. **Frontend Development Intern, CodeAlpha (April 2025 – May 2025)**.
-4. **National Hackathon Champion (2024–2025)**: 3 consecutive victories.
-5. **Full Stack Consultant (2020 – 2023)**: Scaled 10+ e-commerce platforms.
+1. **Founder & Lead Architect, MARSA Empower (2025 – Present)**: Architected a sophisticated multi-agent backend managing 115+ digital FTEs and autonomous agents for a comprehensive women's empowerment platform (marsaempower.com).
+2. **Founder, CodePulse Innovations (June 2025 – Present)**: Launched FolioGenerator.com. Architected full-stack app.
+3. **Senior AI Agent Engineer, Global Intelligence Solutions (2024 – Present)**: Spearheading MCP and RAG paradigms.
+4. **Frontend Development Intern, CodeAlpha (April 2025 – May 2025)**.
+5. **National Hackathon Champion (2024–2025)**: 3 consecutive victories.
+6. **Full Stack Consultant (2020 – 2023)**: Scaled 10+ e-commerce platforms.
 
 **Education:**
 - GIAIC: Certified Cloud Applied Generative AI Engineer (Feb 2024 – Oct 2026).

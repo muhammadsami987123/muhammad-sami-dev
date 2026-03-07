@@ -177,15 +177,14 @@ const skillCategories: Category[] = [
   },
   {
     id: 9,
-    title: 'Low-Code Ecosystem',
+    title: 'Low-Code',
     icon: <FiLayout />,
-    description: 'Professional internal tools and simplified platform utilities',
+    description: 'Professional internal tools and simplified utilities',
     accent: 'bg-cyan-500',
     skills: [
       { name: 'Retool / Appsmith', icon: <SiRetool />, proficiency: 90 },
       { name: 'Bubble / No-Code', icon: <FiLayout />, proficiency: 82 },
       { name: 'OpenCloud CLI', icon: <FiTerminal />, proficiency: 88 },
-      { name: 'CLIs (OpenAI/Gemini)', icon: <FiTerminal />, proficiency: 92 },
       { name: 'Platform Utilities', icon: <FiTool />, proficiency: 85 }
     ]
   }
@@ -197,9 +196,9 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
-      className="group relative flex items-center gap-4 p-3 rounded-xl bg-zinc-50/50 dark:bg-zinc-800/30 hover:bg-white dark:hover:bg-zinc-800/60 border border-zinc-100 dark:border-zinc-800 hover:border-blue-100 dark:hover:border-blue-900/30 transition-all duration-300"
+      className="group relative flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-zinc-50/50 dark:bg-zinc-800/30 hover:bg-white dark:hover:bg-zinc-800/60 border border-zinc-100 dark:border-zinc-800 transition-all duration-300"
     >
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300 shadow-sm">
+      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white dark:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-300 shadow-sm text-sm sm:text-base">
         {skill.icon}
       </div>
 
@@ -232,26 +231,25 @@ const CategoryCard = ({ category }: { category: Category }) => {
   return (
     <motion.div
       layout
-      className="group h-full p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-xl hover:border-blue-100 dark:hover:border-blue-900/30 transition-all duration-300"
+      className="group h-full p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-xl hover:border-blue-100 dark:hover:border-blue-900/30 transition-all duration-300"
     >
       {/* Header */}
-      <div className="flex items-start justify-between mb-6">
-        <div className={`w-12 h-12 rounded-2xl ${category.accent} bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center text-xl`}>
+      <div className="flex items-start justify-between mb-4 sm:mb-6">
+        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${category.accent} bg-opacity-10 dark:bg-opacity-20 flex items-center justify-center text-lg sm:text-xl`}>
           <span className={`dark:text-white text-zinc-900`}>
-            {/* Using cloneElement to pass className if needed, but simple render is fine */}
             {category.icon}
           </span>
         </div>
-        <div className="px-2 py-1 rounded-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+        <div className="px-2 py-1 rounded-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-zinc-500">
           {category.skills.length} Skills
         </div>
       </div>
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+      <div className="mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-1.5 transition-colors">
           {category.title}
         </h3>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed min-h-[40px]">
+        <p className="text-[13px] sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed min-h-[36px]">
           {category.description}
         </p>
       </div>
@@ -269,11 +267,11 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null);
 
   return (
-    <Background className="py-24 lg:pt-32 lg:pb-32 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <Background className="py-20 lg:pt-24 lg:pb-32 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -287,7 +285,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight"
           >
             Tech Stack & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Expert Skills</span>
           </motion.h2>
@@ -297,7 +295,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+            className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
           >
             My technical belt is well-stocked. I utilize a comprehensive arsenal of modern tools
             to architect resilient, scalable, and autonomous systems.
@@ -305,12 +303,12 @@ export default function Skills() {
         </div>
 
         {/* Filter System */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 sm:mb-16 px-4">
           <button
             onClick={() => setActiveCategory(null)}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${activeCategory === null
-                ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg scale-105'
-                : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-zinc-600'
+            className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold transition-all duration-300 ${activeCategory === null
+              ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg scale-105'
+              : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400'
               }`}
           >
             All Areas
@@ -319,9 +317,9 @@ export default function Skills() {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${activeCategory === category.id
-                  ? 'bg-blue-600 text-white shadow-lg scale-105 border-transparent'
-                  : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-blue-500/50 hover:text-blue-600 dark:hover:text-blue-400'
+              className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold transition-all duration-300 ${activeCategory === category.id
+                ? 'bg-blue-600 text-white shadow-lg scale-105 border-transparent'
+                : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400'
                 }`}
             >
               {category.title}
@@ -330,7 +328,7 @@ export default function Skills() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
             {skillCategories
               .filter(cat => activeCategory === null || cat.id === activeCategory)

@@ -287,6 +287,20 @@ export default function About() {
       <div className="relative space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-10">
         {[
           {
+            title: 'Founder & Lead Architect',
+            company: 'MARSA Empower',
+            period: '2025 – Present',
+            location: 'Remote / Global',
+            icon: <FiGlobe />,
+            description: 'Architecting a comprehensive digital ecosystem for women\'s health, safety, and professional growth. Built a sophisticated multi-agent backend from scratch.',
+            highlights: [
+              '115+ Digital FTEs Orchestrated',
+              'Autonomous Multi-Agent Backend',
+              'Scaleable Women\'s Health Platform',
+              'Proprietary Safety SOS Protocols'
+            ]
+          },
+          {
             title: 'Founder',
             company: 'CodePulse Innovations',
             period: 'June 2025 – Present',

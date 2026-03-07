@@ -89,8 +89,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Background className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <Background className="py-24 lg:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,54 +126,54 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <div className="relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 p-8 lg:p-12">
+          <div className="relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 p-5 sm:p-6 lg:p-10">
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-600/10 blur-[80px] rounded-full"></div>
-            <div className="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
+            <div className="relative z-10 flex flex-col lg:flex-row gap-6 lg:gap-8 items-center">
               <div className="flex-1 space-y-6">
                 <div className="space-y-3">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight">
                     100 Days of <br />
                     <span className="text-blue-500">AI Agents Challenge.</span>
                   </h3>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-lg">
+                  <p className="text-zinc-400 text-[12px] sm:text-[13px] md:text-sm leading-relaxed max-w-md">
                     An intensive technical journey dedicated to architecting 100+ autonomous AI entities.
-                    Focused on multi-agent orchestration, contextual memory, and real-world utility frameworks.
+                    Focused on multi-agent orchestration and contextual memory.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6 border-y border-zinc-800/50 py-6">
+                <div className="grid grid-cols-2 gap-4 border-y border-zinc-800/50 py-3 sm:py-4">
                   <div>
-                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">550+</p>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 mt-1">Agents Developed</p>
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">550+</p>
+                    <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500 mt-1">Agents Developed</p>
                   </div>
                   <div>
-                    <p className="text-2xl md:text-3xl font-bold text-white tracking-tight">12+</p>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 mt-1">Frameworks</p>
+                    <p className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">12+</p>
+                    <p className="text-[8px] sm:text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500 mt-1">Frameworks</p>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/AllProjects" className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-zinc-900 font-bold text-sm rounded-xl hover:bg-zinc-100 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                  <Link href="/AllProjects" className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-white text-zinc-900 font-bold text-[10px] sm:text-xs rounded-xl hover:bg-zinc-100 transition-all hover:scale-[1.02] active:scale-[0.98]">
                     Explore AI Agents <FiArrowRight />
                   </Link>
-                  <Link href="/case-study/ai-agents" className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600/10 border border-blue-600/20 text-blue-500 font-bold text-sm rounded-xl hover:bg-blue-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                  <Link href="/case-study/ai-agents" className="inline-flex items-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 bg-blue-600/10 border border-blue-600/20 text-blue-500 font-bold text-[10px] sm:text-xs rounded-xl hover:bg-blue-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
                     View Case Study <FiExternalLink />
                   </Link>
                 </div>
               </div>
 
-              <div className="flex-1 w-full max-w-[320px] aspect-square rounded-2xl bg-zinc-800/30 border border-zinc-700/30 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group/card scale-90 lg:scale-100">
+              <div className="hidden lg:flex flex-1 w-full max-w-[280px] aspect-square rounded-2xl bg-zinc-800/30 border border-zinc-700/30 p-5 flex-col items-center justify-center text-center relative overflow-hidden group/card lg:scale-95">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
-                <FiCpu size={60} className="text-blue-500 mb-6 animate-pulse" />
-                <h4 className="text-xl font-bold text-white mb-2">Technical Mastery</h4>
-                <p className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest leading-none">AI & Architecture</p>
+                <FiCpu size={50} className="text-blue-500 mb-4 animate-pulse" />
+                <h4 className="text-lg font-bold text-white mb-2">Technical Mastery</h4>
+                <p className="text-zinc-500 text-[9px] uppercase font-bold tracking-widest leading-none">AI & Architecture</p>
               </div>
             </div>
           </div>
         </motion.div>
 
         {/* Improved Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -22,6 +23,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/About', label: 'About' },
+    { href: '/#startups', label: 'Startups' },
     { href: '/Projects', label: 'Projects' },
     { href: '/Skills', label: 'Skills' },
     { href: '/Contact', label: 'Contact' },
@@ -36,9 +38,13 @@ export default function Navbar() {
         <div className="container-width">
           <nav className="flex items-center justify-between">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 bg-zinc-900 dark:bg-white rotate-45 rounded-sm transition-transform group-hover:rotate-[135deg] duration-500 shadow-lg"></div>
-                <span className="relative z-10 text-white dark:text-black font-bold text-base">M</span>
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-zinc-100 dark:border-zinc-800 group-hover:border-blue-500 transition-colors duration-500 shadow-lg">
+                <Image
+                  src="/profile1.png"
+                  alt="Muhammad Sami"
+                  fill
+                  className="object-cover transition-transform group-hover:scale-110 duration-500"
+                />
               </div>
               <div className="flex flex-col -gap-1">
                 <span className="font-bold text-lg tracking-tight text-zinc-900 dark:text-white leading-none">

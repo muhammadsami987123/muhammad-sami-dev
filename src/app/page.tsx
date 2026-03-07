@@ -8,6 +8,7 @@ import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import PortfolioAgent from '@/components/PortfolioAgent';
+import Startups from '@/components/Startups';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <Startups />
       <HackathonVictories />
       <Projects />
       <Testimonials />

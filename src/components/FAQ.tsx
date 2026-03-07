@@ -39,8 +39,8 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 bg-white dark:bg-black relative" id="faq">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 lg:py-32 bg-white dark:bg-black relative" id="faq">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
 
                     {/* Left Column: Header & CTA */}
@@ -58,7 +58,7 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight leading-tight"
                         >
                             Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Questions.</span>
                         </motion.h2>
@@ -67,9 +67,9 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-lg text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed"
+                            className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed"
                         >
-                            Here are clear answers to the most common questions about my process, tools, and pricing.
+                            Clear answers to common questions about my process and tools.
                             <br /><br />
                             Can&apos;t find what you are looking for?
                         </motion.p>
@@ -103,7 +103,7 @@ export default function FAQ() {
                                         onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                         className="w-full py-6 flex items-start justify-between text-left focus:outline-none"
                                     >
-                                        <span className={`text-xl font-semibold transition-colors duration-300 ${openIndex === index
+                                        <span className={`text-lg sm:text-xl font-semibold transition-colors duration-300 ${openIndex === index
                                             ? 'text-blue-600 dark:text-blue-400'
                                             : 'text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400'
                                             }`}>
@@ -125,7 +125,7 @@ export default function FAQ() {
                                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="pb-8 pr-12 text-zinc-600 dark:text-zinc-400 leading-relaxed text-base">
+                                                <div className="pb-6 sm:pb-8 pr-4 sm:pr-12 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>
