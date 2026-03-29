@@ -136,7 +136,7 @@ export default function Hero() {
                     <FiGlobe /> Web Resume
                   </button>
                 </a>
-                <a href="/resume.pdf" target="_blank" className="flex-1 sm:flex-none">
+                <a href="/new-resume.pdf" target="_blank" className="flex-1 sm:flex-none">
                   <button className="w-full h-12 lg:h-14 px-5 border-2 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 text-xs">
                     <FiDownload /> Resume PDF
                   </button>
@@ -178,7 +178,7 @@ export default function Hero() {
               <div className="relative bg-white dark:bg-zinc-900 rounded-[2.5rem] p-2 border border-zinc-100 shadow-2xl dark:border-zinc-800/80">
                 <div className="relative aspect-[4/5] w-[260px] xl:w-[300px] rounded-[2rem] overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                   <Image
-                    src="/profile1.png"
+                    src="/new-profile.png"
                     alt="Muhammad Sami"
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"

@@ -448,7 +448,7 @@ export default function About() {
               <div className="relative bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-xl">
                 <div className="aspect-[4/5] relative bg-zinc-100 dark:bg-zinc-800">
                   <Image
-                    src="/profile1.png"
+                    src="/new-profile.png"
                     alt="Muhammad Sami"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
