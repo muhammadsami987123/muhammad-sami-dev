@@ -1,61 +1,70 @@
 import { MetadataRoute } from 'next'
 
 import { hackathonProjects } from '@/data/hackathon-projects'
+import { projects } from '@/data/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://muhammad-sami.vercel.app'
+    const now = new Date()
 
     const staticRoutes = [
         {
             url: baseUrl,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'weekly' as const,
             priority: 1,
         },
         {
             url: `${baseUrl}/About`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/Projects`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'weekly' as const,
             priority: 0.9,
         },
         {
             url: `${baseUrl}/AllProjects`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'weekly' as const,
-            priority: 0.8,
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/Skills`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.8,
         },
         {
             url: `${baseUrl}/Contact`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         },
         {
             url: `${baseUrl}/case-study/ai-agents`,
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'monthly' as const,
-            priority: 0.8,
+            priority: 0.75,
         },
     ]
 
-    const projectRoutes = hackathonProjects.map((project) => ({
-        url: `${baseUrl}/hackathon/${project.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.9,
+    const projectRoutes = projects.map((project) => ({
+        url: `${baseUrl}/projects/${project.slug}`,
+        lastModified: now,
+        changeFrequency: project.status === 'archive' ? 'yearly' as const : 'monthly' as const,
+        priority: project.status === 'featured' ? 0.9 : project.status === 'current' ? 0.8 : 0.55,
     }))
 
-    return [...staticRoutes, ...projectRoutes]
+    const hackathonRoutes = hackathonProjects.map((project) => ({
+        url: `${baseUrl}/hackathon/${project.slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }))
+
+    return [...staticRoutes, ...projectRoutes, ...hackathonRoutes]
 }

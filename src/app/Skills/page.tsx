@@ -25,26 +25,17 @@ import {
   SiGit,
   SiFramer,
   SiDjango,
-  SiGraphql,
-  SiSupabase,
   SiVercel,
   SiOpenai,
   SiLangchain,
   SiHuggingface,
   SiAmazon,
-  SiCloudflare,
-  SiMongodb,
   SiPlanetscale,
-  SiKubernetes,
   SiZapier,
-  SiRetool,
   SiN8N,
-  SiGooglegemini,
   SiRedis,
-  SiTerraform,
   SiVite,
   SiDigitalocean,
-  SiRailway,
 } from 'react-icons/si';
 
 interface Skill {
@@ -70,11 +61,11 @@ const skillCategories: Category[] = [
     description: 'Architecting high-performance, responsive, and visually stunning interfaces',
     accent: 'bg-blue-500',
     skills: [
-      { name: 'React 19 / Next.js 15', icon: <SiReact />, proficiency: 100 },
+      { name: 'React / Next.js', icon: <SiReact />, proficiency: 100 },
       { name: 'TypeScript', icon: <SiTypescript />, proficiency: 94 },
       { name: 'Tailwind CSS', icon: <SiTailwindcss />, proficiency: 100 },
       { name: 'Framer Motion', icon: <SiFramer />, proficiency: 90 },
-      { name: 'Vite / State Mgmt', icon: <SiVite />, proficiency: 88 }
+      { name: 'Responsive Product UI', icon: <SiVite />, proficiency: 92 }
     ]
   },
   {
@@ -84,11 +75,11 @@ const skillCategories: Category[] = [
     description: 'Engineering resilient server-side architectures and intelligent logic',
     accent: 'bg-indigo-500',
     skills: [
-      { name: 'Node.js / Express', icon: <SiNodedotjs />, proficiency: 92 },
+      { name: 'Node.js APIs', icon: <SiNodedotjs />, proficiency: 92 },
       { name: 'Python / FastAPI', icon: <SiPython />, proficiency: 95 },
-      { name: 'Django', icon: <SiDjango />, proficiency: 80 },
-      { name: 'GraphQL / Node APIs', icon: <SiGraphql />, proficiency: 85 },
-      { name: 'Serverless / Microservices', icon: <FiZap />, proficiency: 90 }
+      { name: 'Django', icon: <SiDjango />, proficiency: 84 },
+      { name: 'REST / API Development', icon: <FiZap />, proficiency: 90 },
+      { name: 'Backend Architecture', icon: <FiTerminal />, proficiency: 90 }
     ]
   },
   {
@@ -98,11 +89,11 @@ const skillCategories: Category[] = [
     description: 'Building autonomous agents and leveraging state-of-the-art AI',
     accent: 'bg-purple-600',
     skills: [
-      { name: 'OpenAI / Anthropic SDK', icon: <SiOpenai />, proficiency: 98 },
+      { name: 'OpenAI SDK', icon: <SiOpenai />, proficiency: 98 },
       { name: 'LangChain / CrewAI', icon: <SiLangchain />, proficiency: 92 },
       { name: 'HuggingFace', icon: <SiHuggingface />, proficiency: 85 },
-      { name: 'MCP Protocols', icon: <FiTerminal />, proficiency: 95 },
-      { name: 'Vector DBs / RAG', icon: <FiDatabase />, proficiency: 90 }
+      { name: 'Claude / MCP', icon: <FiTerminal />, proficiency: 95 },
+      { name: 'RAG / Agent Architecture', icon: <FiDatabase />, proficiency: 90 }
     ]
   },
   {
@@ -112,11 +103,11 @@ const skillCategories: Category[] = [
     description: 'Scalable cloud infrastructure and edge delivery networks',
     accent: 'bg-sky-500',
     skills: [
-      { name: 'AWS / GCP / Azure', icon: <SiAmazon />, proficiency: 85 },
-      { name: 'Vercel / Netlify', icon: <SiVercel />, proficiency: 100 },
-      { name: 'Cloudflare / Edge', icon: <SiCloudflare />, proficiency: 94 },
-      { name: 'DigitalOcean', icon: <SiDigitalocean />, proficiency: 88 },
-      { name: 'Railway / Render', icon: <SiRailway />, proficiency: 92 }
+      { name: 'AWS', icon: <SiAmazon />, proficiency: 85 },
+      { name: 'Vercel', icon: <SiVercel />, proficiency: 100 },
+      { name: 'Docker', icon: <SiDocker />, proficiency: 92 },
+      { name: 'CI/CD', icon: <FiZap />, proficiency: 90 },
+      { name: 'Cloud Deployment', icon: <SiDigitalocean />, proficiency: 88 }
     ]
   },
   {
@@ -127,10 +118,10 @@ const skillCategories: Category[] = [
     accent: 'bg-emerald-500',
     skills: [
       { name: 'PostgreSQL', icon: <SiPostgresql />, proficiency: 92 },
-      { name: 'Supabase / Neon', icon: <SiSupabase />, proficiency: 96 },
-      { name: 'MongoDB / Atlas', icon: <SiMongodb />, proficiency: 88 },
-      { name: 'PlanetScale / MySQL', icon: <SiPlanetscale />, proficiency: 85 },
-      { name: 'Redis / Firebase', icon: <SiRedis />, proficiency: 90 }
+      { name: 'Sanity', icon: <FiDatabase />, proficiency: 92 },
+      { name: 'MySQL', icon: <SiPlanetscale />, proficiency: 85 },
+      { name: 'Redis', icon: <SiRedis />, proficiency: 86 },
+      { name: 'Database Design', icon: <FiTerminal />, proficiency: 90 }
     ]
   },
   {
@@ -140,11 +131,11 @@ const skillCategories: Category[] = [
     description: 'Cloud-native orchestration and development environment',
     accent: 'bg-indigo-600',
     skills: [
-      { name: 'Docker / Compose', icon: <SiDocker />, proficiency: 94 },
-      { name: 'Kubernetes / Helm', icon: <SiKubernetes />, proficiency: 85 },
+      { name: 'Docker', icon: <SiDocker />, proficiency: 94 },
       { name: 'Git / GitHub CLI', icon: <SiGit />, proficiency: 100 },
       { name: 'CI/CD Pipelines', icon: <FiZap />, proficiency: 90 },
-      { name: 'Infrastructure as Code', icon: <SiTerraform />, proficiency: 82 }
+      { name: 'Vercel Deployments', icon: <SiVercel />, proficiency: 96 },
+      { name: 'AWS Workloads', icon: <SiAmazon />, proficiency: 85 }
     ]
   },
   {
@@ -155,10 +146,10 @@ const skillCategories: Category[] = [
     accent: 'bg-orange-500',
     skills: [
       { name: 'n8n Orchestration', icon: <SiN8N />, proficiency: 95 },
-      { name: 'Zapier / Make.com', icon: <SiZapier />, proficiency: 92 },
-      { name: 'Pipedream automation', icon: <FiZap />, proficiency: 88 },
-      { name: 'Custom API Connectors', icon: <FiCode />, proficiency: 90 },
-      { name: 'System Interop', icon: <FiTerminal />, proficiency: 94 }
+      { name: 'Automation Workflows', icon: <SiZapier />, proficiency: 92 },
+      { name: 'Streamlit Apps', icon: <FiZap />, proficiency: 88 },
+      { name: 'Chainlit Interfaces', icon: <FiCode />, proficiency: 86 },
+      { name: 'Custom API Connectors', icon: <FiTerminal />, proficiency: 90 }
     ]
   },
   {
@@ -168,24 +159,24 @@ const skillCategories: Category[] = [
     description: 'Rapidly deploying autonomous agents and AI-first interfaces',
     accent: 'bg-amber-500',
     skills: [
-      { name: 'OpenAI Builders', icon: <SiOpenai />, proficiency: 98 },
+      { name: 'AI Agent Architecture', icon: <SiOpenai />, proficiency: 98 },
       { name: 'OpenAI Apps / Agents', icon: <SiOpenai />, proficiency: 96 },
-      { name: 'Gemini MakerSuite', icon: <SiGooglegemini />, proficiency: 92 },
-      { name: 'KAgent / Custom Agents', icon: <FiCpu />, proficiency: 85 },
-      { name: 'Prompt Engineering', icon: <FiCode />, proficiency: 100 }
+      { name: 'Prompt & Context Engineering', icon: <FiCode />, proficiency: 95 },
+      { name: 'Offline AI Assistants', icon: <FiCpu />, proficiency: 88 },
+      { name: 'Cloud AI Assistants', icon: <FiTerminal />, proficiency: 90 }
     ]
   },
   {
     id: 9,
-    title: 'Low-Code',
+    title: 'Commerce & Integrations',
     icon: <FiLayout />,
-    description: 'Professional internal tools and simplified utilities',
+    description: 'Payment, shipping, and product-platform integration work',
     accent: 'bg-cyan-500',
     skills: [
-      { name: 'Retool / Appsmith', icon: <SiRetool />, proficiency: 90 },
-      { name: 'Bubble / No-Code', icon: <FiLayout />, proficiency: 82 },
-      { name: 'OpenCloud CLI', icon: <FiTerminal />, proficiency: 88 },
-      { name: 'Platform Utilities', icon: <FiTool />, proficiency: 85 }
+      { name: 'Stripe Integrations', icon: <FiCode />, proficiency: 90 },
+      { name: 'ShipEngine Integrations', icon: <FiTool />, proficiency: 86 },
+      { name: 'E-Commerce Platforms', icon: <FiLayout />, proficiency: 92 },
+      { name: 'Product Strategy', icon: <FiCpu />, proficiency: 88 }
     ]
   }
 ];

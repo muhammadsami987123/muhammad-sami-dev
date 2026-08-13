@@ -36,13 +36,13 @@ export default function Footer() {
                   Muhammad Sami
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-blue-600 dark:text-blue-400 mt-1">
-                  AI & Full-Stack Engineer
+                  Forward Deployed · AI Agents
                 </span>
               </div>
             </Link>
 
             <p className="text-zinc-500 dark:text-zinc-400 max-w-sm text-base leading-relaxed">
-              Pioneering the <span className="text-zinc-900 dark:text-white font-medium">Architecture of Intelligence</span>. Specializing in autonomous agents, cloud-native deployments, and advanced full-stack systems.
+              Building serious AI systems, intelligent products, automation workflows, developer tools, and scalable full-stack platforms.
             </p>
 
             <div className="flex items-center gap-3 py-2 px-4 rounded-full bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100/50 dark:border-blue-900/20 w-fit">

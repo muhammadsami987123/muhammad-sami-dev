@@ -38,27 +38,27 @@ export default function About() {
       <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="prose prose-zinc dark:prose-invert max-w-none">
           <p className="text-xl font-medium text-zinc-900 dark:text-white leading-relaxed">
-            I am a <span className="text-blue-600 dark:text-blue-400">Lead AI Agent Engineer & Full-Stack Architect</span>, focused on building autonomous systems and cloud-native intelligence.
+            I am a <span className="text-blue-600 dark:text-blue-400">Forward Deployed Engineer, AI Agent Engineer, Full-Stack Developer, and Founder</span>, focused on building AI agents, automation workflows, and scalable web platforms.
           </p>
           <div className="space-y-4 text-zinc-600 dark:text-zinc-400">
             <p>
-              My professional mission is to bridge the gap between sophisticated software architectures and autonomous agentic layers, enabling systems that don&apos;t just process data—but reason, plan, and execute.
+              My professional mission is to turn complex business problems into deployed AI systems: offline and cloud-enabled assistants, automation workflows, agentic products, and full-stack platforms that are useful in the real world.
             </p>
             <p>
-              Having engineered over <span className="font-bold text-zinc-900 dark:text-white">550+ AI agentic workflows</span> and successfully deployed <span className="font-bold text-zinc-900 dark:text-white">150+ tech-driven projects</span>, I specialize in multi-agent orchestration, scalable infrastructure, and specialized automation.
+              Having built <span className="font-bold text-zinc-900 dark:text-white">500+ AI agents</span>, shipped <span className="font-bold text-zinc-900 dark:text-white">50+ deployed projects</span>, and delivered <span className="font-bold text-zinc-900 dark:text-white">7+ e-commerce platforms</span>, I specialize in agent architecture, product engineering, technical leadership, and scalable implementation.
             </p>
             <p>
-              I take pride in my performance at <span className="font-bold text-zinc-900 dark:text-white">National AI Hackathons</span>, where I have consistently delivered award-winning architectures that prioritize efficiency and system scalability.
+              I focus on work that proves technical depth: AI agents, automation workflows, full-stack platforms, e-commerce systems, and product experiences that balance clarity, reliability, and execution quality.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { label: 'AI Agents Engineered', value: '550+', icon: <FiCpu /> },
-            { label: 'National Victories', value: '3/3', icon: <FiAward /> },
-            { label: 'Total Tech Stack', value: '50+', icon: <FiCode /> },
-            { label: 'E-commerce Platforms', value: '10+', icon: <FiGlobe /> },
+            { label: 'AI Agents Built', value: '500+', icon: <FiCpu /> },
+            { label: 'Projects Deployed', value: '50+', icon: <FiAward /> },
+            { label: 'E-commerce Platforms', value: '7+', icon: <FiCode /> },
+            { label: 'Founder Roles', value: '2', icon: <FiGlobe /> },
           ].map((stat) => (
             <div key={stat.label} className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-100 dark:border-zinc-700/50 transition-all hover:border-zinc-200 dark:hover:border-zinc-600 group">
               <div className="text-blue-600 dark:text-blue-400 mb-3 opacity-50 group-hover:opacity-100 transition-opacity">
@@ -126,15 +126,15 @@ export default function About() {
             },
             {
               title: 'Full-Stack Architecture',
-              skills: ['Next.js 15 & React 19 Ecosystem', 'TypeScript & Python (FastAPI)', 'Django & Express.js Runtimes', 'High-Performance Tailwind UI/UX', 'GraphQL & Real-time WebSockets']
+              skills: ['React & Next.js', 'TypeScript & Python', 'Node.js APIs & Django', 'Tailwind CSS UI/UX', 'Full-stack platform architecture']
             },
             {
               title: 'Cloud & Infrastructure',
-              skills: ['Kubernetes & Docker Orchestration', 'AWS, GCP, & Azure Cloud', 'Vercel, Railway, & Render Ops', 'CI/CD (GitHub Actions, Argo CD)', 'Cloudflare Edge Computing']
+              skills: ['Vercel deployments', 'AWS workloads', 'Dockerized development', 'CI/CD workflows', 'Production-ready release habits']
             },
             {
               title: 'Automation & No-Code',
-              skills: ['n8n & Zapier Workflow Design', 'Make.com & Pipedream Logic', 'Retool & Appsmith Tooling', 'OpenAI Builder & Custom GPTs', 'Gemini MakerSuite Integration']
+              skills: ['n8n workflow design', 'Stripe integrations', 'ShipEngine integrations', 'Streamlit & Chainlit interfaces', 'Prompt & context engineering']
             }
           ].map((group) => (
             <div key={group.title} className="space-y-4">
@@ -231,8 +231,8 @@ export default function About() {
             },
             {
               phase: "Phase II: The Growth",
-              title: "550+ Agents & Multi-Agent Systems",
-              details: "Engineered hundreds of specialized agents. Focused on orchestration frameworks like CrewAI and AutoGen to solve multi-step industrial problems.",
+              title: "500+ Agents & Multi-Agent Systems",
+              details: "Built hundreds of specialized agents across offline assistants, cloud-enabled assistants, automation workflows, and product-facing AI systems.",
               icon: <FiCpu className="text-purple-500" />
             },
             {
@@ -259,17 +259,17 @@ export default function About() {
             <div className="space-y-4">
               <h4 className="text-xl font-bold tracking-tight">The &quot;100 Days of AI Agents&quot; Milestone</h4>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                A pivotal chapter in my journey was building the <span className="text-white font-bold">550+ autonomous agents</span>. This wasn&apos;t just a volume play; it was a rigorous exploration of RAG, tool-calling behavior, and the limits of agentic persistence across 150+ diverse industrial projects.
+                A pivotal chapter in my journey has been building <span className="text-white font-bold">500+ AI agents</span> while learning where agentic systems create real product value: RAG, tool-calling, workflow automation, context control, and reliable full-stack integration across 50+ deployed projects.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
-                <p className="text-4xl font-bold tracking-tighter text-blue-400">150+</p>
+                <p className="text-4xl font-bold tracking-tighter text-blue-400">50+</p>
                 <p className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mt-2">Projects Deployed</p>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold tracking-tighter text-purple-400">98%</p>
-                <p className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mt-2">Inference Success</p>
+                <p className="text-4xl font-bold tracking-tighter text-purple-400">7+</p>
+                <p className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 mt-2">E-Commerce Platforms</p>
               </div>
             </div>
           </div>
@@ -287,17 +287,17 @@ export default function About() {
       <div className="relative space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-10">
         {[
           {
-            title: 'Founder & Lead Architect',
-            company: 'MARSA Empower',
-            period: '2025 – Present',
+            title: 'Founder + Chief Operating Officer',
+            company: 'Marsa Empower',
+            period: 'January 2026 – Present',
             location: 'Remote / Global',
             icon: <FiGlobe />,
-            description: 'Architecting a comprehensive digital ecosystem for women\'s health, safety, and professional growth. Built a sophisticated multi-agent backend from scratch.',
+            description: 'Leading vision, strategic direction, platform development, digital presence, brand positioning, community growth, engagement, long-term innovation, and expansion strategy for Marsa Empower.',
             highlights: [
-              '115+ Digital FTEs Orchestrated',
-              'Autonomous Multi-Agent Backend',
-              'Scaleable Women\'s Health Platform',
-              'Proprietary Safety SOS Protocols'
+              'Vision and strategic direction',
+              'Platform development and digital presence',
+              'Brand building and positioning',
+              'Community growth and expansion strategy'
             ]
           },
           {
@@ -314,11 +314,11 @@ export default function About() {
             ]
           },
           {
-            title: 'Senior AI Agent Engineer',
-            company: 'Global Intelligence Solutions',
-            period: '2024 – Present',
+            title: 'AI Agent Engineer & Full-Stack Developer',
+            company: 'International Freelance Clients',
+            period: '2025 – Present',
             icon: <FiTerminal />,
-            description: 'Spearheading the implementation of Model Context Protocols (MCP) and RAG paradigms. Developed customized agentic suites for enterprise-level automation.'
+            description: 'Building AI agents, automation workflows, e-commerce systems, Stripe integrations, ShipEngine integrations, and scalable web platforms for international client work.'
           },
           {
             title: 'Frontend Development Intern',
@@ -332,18 +332,18 @@ export default function About() {
             ]
           },
           {
-            title: 'National Hackathon Champion',
-            company: 'Pan-Pakistan AI Competitions',
-            period: '2024 – 2025',
+            title: 'AI & MCP Certification Track',
+            company: 'Anthropic, Hugging Face, PIAIC, Panaversity, AWS, n8n',
+            period: '2025 – 2026',
             icon: <FiAward />,
-            description: 'Achieved 3 consecutive victories specializing in "Physical AI Humanoids", "Cloud-Native Infrastructure", and "Agentic Tutoring Platforms".'
+            description: 'Completed certifications across Claude, Model Context Protocol, AI fluency, prompt and context engineering, AWS generative AI/cloud topics, n8n automation, and agent factory fundamentals.'
           },
           {
-            title: 'Full Stack Consultant',
-            company: 'Independent Solutions',
-            period: '2020 – 2023',
+            title: 'E-Commerce & Integration Builder',
+            company: 'Client and Product Work',
+            period: '2025 – Present',
             icon: <FiGlobe />,
-            description: 'Architected and scaled 10+ e-commerce platforms and high-conversion SaaS dashboards moving legacy systems to modern cloud distributions.'
+            description: 'Built and supported 7+ e-commerce platforms with modern storefronts, product workflows, Stripe integrations, ShipEngine integrations, and scalable web architecture.'
           }
         ].map((item, idx) => (
           <div key={idx} className="group relative">

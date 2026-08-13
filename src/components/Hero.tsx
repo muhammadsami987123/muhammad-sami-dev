@@ -8,10 +8,10 @@ import Image from 'next/image';
 import Background from './Background';
 
 const roles = [
+  "Forward Deployed Engineer",
   "AI Agent Engineer",
-  "Full Stack Developer",
-  "Automation Specialist",
-  "System Architect"
+  "Full-Stack Developer",
+  "Founder"
 ];
 
 export default function Hero() {
@@ -97,7 +97,7 @@ export default function Hero() {
             {/* Role Display */}
             <div className="h-12 flex justify-center lg:justify-start items-center mb-6">
               <span className="text-lg sm:text-xl lg:text-2xl font-bold text-zinc-500 dark:text-zinc-500 mr-3">
-                Expert in
+                Building as
               </span>
               <div className="relative">
                 <AnimatePresence mode="wait">
@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
 
             <p className="text-sm sm:text-base lg:text-lg text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-              Specialized in engineering <span className="font-bold text-zinc-900 dark:text-white">Autonomous AI Systems</span> and architecting scalable <span className="font-bold text-zinc-900 dark:text-white">Full Stack Solutions</span>.
+              I build <span className="font-bold text-zinc-900 dark:text-white">serious AI systems</span>, intelligent products, automation workflows, developer tools, and scalable <span className="font-bold text-zinc-900 dark:text-white">full-stack platforms</span>.
             </p>
 
             {/* Actions */}
@@ -187,7 +187,7 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent"></div>
 
                   <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/10 dark:bg-black/30 backdrop-blur-xl border border-white/20">
-                    <p className="text-[8px] font-bold text-blue-300 uppercase tracking-widest mb-1">Lead AI Engineer</p>
+                    <p className="text-[8px] font-bold text-blue-300 uppercase tracking-widest mb-1">AI Agent Engineer</p>
                     <p className="text-white font-bold text-[10px] tracking-tight">Open for collaboration</p>
                   </div>
                 </div>

@@ -31,7 +31,7 @@ export default function AIAgentsCaseStudy() {
                             100 Days of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AI Agents.</span>
                         </h1>
                         <p className="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                            An intensive technical journey architecting 550+ autonomous AI entities, focused on multi-agent orchestration, contextual memory, and real-world utility frameworks.
+                            An intensive technical journey building 500+ AI agents, focused on multi-agent orchestration, contextual memory, automation workflows, and real-world utility frameworks.
                         </p>
                     </div>
                 </motion.div>
@@ -60,10 +60,10 @@ export default function AIAgentsCaseStudy() {
                     className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
                 >
                     {[
-                        { label: 'Agents Developed', value: '550+', icon: <FiCpu /> },
+                        { label: 'Agents Built', value: '500+', icon: <FiCpu /> },
                         { label: 'Frameworks Used', value: '12+', icon: <FiCode /> },
-                        { label: 'Success Rate', value: '98%', icon: <FiTrendingUp /> },
-                        { label: 'Projects Deployed', value: '150+', icon: <FiAward /> },
+                        { label: 'E-Commerce Platforms', value: '7+', icon: <FiTrendingUp /> },
+                        { label: 'Projects Deployed', value: '50+', icon: <FiAward /> },
                     ].map((metric, index) => (
                         <div key={index} className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-800">
                             <div className="text-blue-600 dark:text-blue-400 mb-3">{metric.icon}</div>
@@ -174,12 +174,12 @@ export default function AIAgentsCaseStudy() {
                             <h3 className="text-2xl font-bold mb-4">Impact & Achievements</h3>
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div>
-                                    <p className="text-4xl font-bold mb-2">70%</p>
-                                    <p className="text-zinc-300 dark:text-zinc-600 text-sm">Reduction in manual overhead for client workflows</p>
+                                    <p className="text-4xl font-bold mb-2">7+</p>
+                                    <p className="text-zinc-300 dark:text-zinc-600 text-sm">E-commerce platforms shipped with modern product workflows</p>
                                 </div>
                                 <div>
-                                    <p className="text-4xl font-bold mb-2">150+</p>
-                                    <p className="text-zinc-300 dark:text-zinc-600 text-sm">Production deployments across diverse industries</p>
+                                    <p className="text-4xl font-bold mb-2">50+</p>
+                                    <p className="text-zinc-300 dark:text-zinc-600 text-sm">Deployed projects across AI, automation, commerce, and full-stack platforms</p>
                                 </div>
                             </div>
                         </div>

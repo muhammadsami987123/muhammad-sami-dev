@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(cd /tmp)",
+      "Bash(gh api *)",
+      "Read(//c/Users/Dell/.claude/skills/browsing-with-playwright/**)",
+      "Bash(python -c ' *)"
     ]
   }
 }

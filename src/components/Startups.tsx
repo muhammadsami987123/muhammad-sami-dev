@@ -6,34 +6,34 @@ import Image from 'next/image';
 
 const ventures = [
     {
-        title: 'MARSA Empower',
-        tagline: 'The Future of Women\'s Empowerment',
-        description: 'A comprehensive digital ecosystem for women\'s health, safety, and growth. Architected an autonomous multi-agent backend managing 115+ digital FTEs from the ground up.',
+        title: 'Marsa Empower',
+        tagline: 'Founder + Chief Operating Officer',
+        description: 'Helping shape vision, strategy, platform development, digital presence, brand positioning, community growth, engagement, long-term innovation, and expansion strategy.',
         highlights: [
-            '115+ Digital FTEs Orchestrated',
-            'Autonomous Multi-Agent Backend',
-            'Scaleable Women\'s Health Platform',
-            'Proprietary Safety SOS Protocols'
+            'Vision and strategic direction',
+            'Platform development',
+            'Digital presence and positioning',
+            'Community growth strategy'
         ],
         logo: '/marsa-logo.png',
         url: 'https://marsaempower.com/',
         color: 'from-blue-600 to-indigo-700',
-        stats: '115+ Digital FTEs'
+        stats: 'Jan 2026 – Present'
     },
     {
         title: 'CodePulse Innovations',
-        tagline: 'AI-Driven Digital Experience',
-        description: 'Leading the frontier of rapid portfolio synthesis with FolioGenerator.com. Building agentic drafting engines that deliver premium digital presences with near-zero hallucination.',
+        tagline: 'Founder · FolioGenerator.com',
+        description: 'Founder of CodePulse Innovations, with FolioGenerator.com referenced as a current product focus for portfolio generation and digital presence workflows.',
         highlights: [
-            'FolioGenerator.com Integration',
-            'Agentic Content Drafting',
-            'Real-time SEO Orchestration',
-            'Custom AI Sandbox Environments'
+            'FolioGenerator.com',
+            'Portfolio generation workflows',
+            'Full-stack product development',
+            'Digital presence tooling'
         ],
         logo: '/codepulse-logo.png',
         url: 'https://foliogenerator.com/',
         color: 'from-teal-500 to-emerald-600',
-        stats: 'Zero-Hallucination Engines'
+        stats: 'June 2025 – Present'
     }
 ];
 
@@ -59,7 +59,7 @@ export default function Startups() {
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                         </span>
                         <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-                            Founder & Lead Architect
+                            Founder · Operator · Builder
                         </span>
                     </motion.div>
 
