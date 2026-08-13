@@ -63,7 +63,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-[11px] font-semibold text-zinc-600 dark:text-zinc-300 tracking-wide whitespace-nowrap">
+              <span className="text-[11px] font-semibold text-zinc-600 dark:text-zinc-300 tracking-wide sm:whitespace-nowrap">
                 Available for new projects
               </span>
             </motion.div>
@@ -73,8 +73,8 @@ export default function Hero() {
               Hi, I&apos;m
             </p>
 
-            {/* Name — one line */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none mb-6 whitespace-nowrap">
+            {/* Name — desktop whitespace-nowrap intact */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none mb-6 sm:whitespace-nowrap">
               <span className="text-zinc-900 dark:text-white">Muhammad </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Sami
@@ -113,20 +113,20 @@ export default function Hero() {
               <span className="font-semibold text-zinc-800 dark:text-zinc-200">full-stack platforms</span>.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
-              <Link href="#projects">
-                <button className="h-12 px-7 bg-zinc-900 dark:bg-white hover:bg-zinc-700 dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-bold rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 whitespace-nowrap">
+            {/* CTA Buttons - Original desktop row intact */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 mb-8 w-full sm:w-auto">
+              <Link href="#projects" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto h-12 px-7 bg-zinc-900 dark:bg-white hover:bg-zinc-700 dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-bold rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 whitespace-nowrap">
                   Explore Projects <FiArrowRight size={16} />
                 </button>
               </Link>
-              <a href="https://muhammad-sami-resume.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <button className="h-12 px-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 text-zinc-700 dark:text-zinc-300 text-sm font-medium rounded-2xl shadow-sm transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="https://muhammad-sami-resume.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto h-12 px-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 text-zinc-700 dark:text-zinc-300 text-sm font-medium rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
                   <FiGlobe size={15} /> Web Resume
                 </button>
               </a>
-              <a href="/new-resume.pdf" target="_blank" rel="noopener noreferrer">
-                <button className="h-12 px-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 text-zinc-700 dark:text-zinc-300 text-sm font-medium rounded-2xl shadow-sm transition-all flex items-center gap-2 whitespace-nowrap">
+              <a href="/new-resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto h-12 px-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 text-zinc-700 dark:text-zinc-300 text-sm font-medium rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
                   <FiDownload size={15} /> Resume PDF
                 </button>
               </a>
@@ -164,7 +164,7 @@ export default function Hero() {
 
             {/* Card */}
             <div className="relative bg-white dark:bg-zinc-900 rounded-[2.5rem] p-2.5 border border-zinc-200 dark:border-zinc-800 shadow-2xl">
-              <div className="relative w-[280px] xl:w-[310px] aspect-[3/4] rounded-[2rem] overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+              <div className="relative w-[260px] sm:w-[280px] xl:w-[310px] aspect-[3/4] rounded-[2rem] overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                 <Image
                   src="/new-profile.png"
                   alt="Muhammad Sami — AI Agent Engineer"
@@ -183,17 +183,17 @@ export default function Hero() {
             </div>
 
             {/* Stats row below card */}
-            <div className="flex items-center justify-center gap-6 mt-4 px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm">
+            <div className="flex items-center justify-center gap-6 mt-4 px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm max-w-full">
               <div className="text-center">
                 <p className="text-2xl font-extrabold text-zinc-900 dark:text-white leading-none">500+</p>
                 <p className="text-[10px] text-zinc-500 font-medium mt-0.5 whitespace-nowrap">AI Agents Built</p>
               </div>
-              <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-700" />
+              <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-700 shrink-0" />
               <div className="text-center">
                 <p className="text-2xl font-extrabold text-zinc-900 dark:text-white leading-none">50+</p>
                 <p className="text-[10px] text-zinc-500 font-medium mt-0.5 whitespace-nowrap">Projects Shipped</p>
               </div>
-              <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-700" />
+              <div className="w-px h-8 bg-zinc-200 dark:bg-zinc-700 shrink-0" />
               <div className="text-center">
                 <p className="text-2xl font-extrabold text-zinc-900 dark:text-white leading-none">7+</p>
                 <p className="text-[10px] text-zinc-500 font-medium mt-0.5 whitespace-nowrap">E-Commerce</p>
