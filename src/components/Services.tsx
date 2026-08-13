@@ -98,19 +98,19 @@ const getColorClasses = (color: string) => {
 
 export default function Services() {
     return (
-        <section className="py-20 lg:py-28 relative overflow-hidden bg-white dark:bg-zinc-950">
+        <section className="py-14 sm:py-20 lg:py-28 relative overflow-hidden bg-white dark:bg-zinc-950">
             {/* Background Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-                <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[20%] left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[20%] left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-indigo-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 text-center">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8 sm:mb-12 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold text-[10px] tracking-widest uppercase mb-6"
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold text-[10px] tracking-widest uppercase mb-4 sm:mb-6"
                 >
                     Capabilities
                 </motion.div>
@@ -118,7 +118,7 @@ export default function Services() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
+                    className="text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-6 tracking-tight leading-tight"
                 >
                     Engineered <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Solutions.</span>
                 </motion.h2>
@@ -127,7 +127,7 @@ export default function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
+                    className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed"
                 >
                     Specialized services bridging the gap between sophisticated software architecture and autonomous intelligence.
                 </motion.p>
@@ -135,25 +135,25 @@ export default function Services() {
 
             {/* Full-width Marquee Track */}
             <div className="relative w-full overflow-hidden" role="region" aria-label="Engineered Solutions carousel">
-                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 sm:w-24" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 sm:w-24" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 sm:w-24 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 sm:w-24 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80" />
 
-                <div className="project-marquee-track flex w-max gap-5 py-4 px-6">
+                <div className="project-marquee-track flex w-max gap-4 sm:gap-5 py-4 px-4 sm:px-6 overflow-x-auto no-scrollbar">
                     {[...services, ...services].map((service, index) => {
                         const style = getColorClasses(service.color);
 
                         return (
                             <motion.div
                                 key={`${service.title}-${index}`}
-                                className={`group relative w-[300px] sm:w-[340px] shrink-0 p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
+                                className={`group relative w-[270px] sm:w-[340px] shrink-0 p-5 sm:p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
                             >
-                                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 shadow-sm group-hover:scale-110 group-hover:text-white transition-all duration-500 ${style.iconText} ${style.iconBg}`}>
+                                <div className={`w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-lg sm:text-2xl mb-4 sm:mb-6 shadow-sm group-hover:scale-110 group-hover:text-white transition-all duration-500 ${style.iconText} ${style.iconBg}`}>
                                     {service.icon}
                                 </div>
-                                <h3 className={`text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4 transition-colors ${style.titleHover}`}>
+                                <h3 className={`text-base sm:text-xl font-bold text-zinc-900 dark:text-white mb-2 sm:mb-4 transition-colors ${style.titleHover}`}>
                                     {service.title}
                                 </h3>
-                                <p className="text-zinc-500 dark:text-zinc-400 text-sm sm:text-[15px] leading-relaxed mb-6 sm:mb-8 font-medium">
+                                <p className="text-zinc-500 dark:text-zinc-400 text-xs sm:text-[15px] leading-relaxed mb-4 sm:mb-8 font-medium">
                                     {service.description}
                                 </p>
 

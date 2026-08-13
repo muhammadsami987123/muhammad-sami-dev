@@ -43,7 +43,7 @@ export default function HackathonVictories() {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                     {hackathonProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
@@ -71,8 +71,8 @@ export default function HackathonVictories() {
                                 />
                             </div>
 
-                            <div className="p-4 relative z-20 flex-1 flex flex-col">
-                                <h3 className="text-sm font-bold text-zinc-900 dark:text-white mb-1.5 tracking-tight line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <div className="p-4 sm:p-5 relative z-20 flex-1 flex flex-col">
+                                <h3 className="text-sm sm:text-base font-bold text-zinc-900 dark:text-white mb-1.5 tracking-tight line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     {project.title}
                                 </h3>
                                 <p className="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed mb-3 line-clamp-2 font-medium">
@@ -96,14 +96,14 @@ export default function HackathonVictories() {
                                     ))}
                                 </div>
 
-                                <div className="mt-auto pt-3 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between gap-2 relative z-30">
+                                <div className="mt-auto pt-3 border-t border-zinc-100 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2 relative z-30">
                                     <Link
                                         href={`/hackathon/${project.slug}`}
                                         className="inline-flex items-center gap-1.5 text-[11px] font-bold text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wider"
                                     >
                                         Case Study <FiArrowRight size={11} />
                                     </Link>
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-1.5 sm:gap-2">
                                         <a
                                             href={project.liveUrl}
                                             target="_blank"

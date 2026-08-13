@@ -240,7 +240,7 @@ const CategoryCard = ({ category }: { category: Category }) => {
         <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-1.5 transition-colors">
           {category.title}
         </h3>
-        <p className="text-[13px] sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed min-h-[36px]">
+        <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed sm:min-h-[36px]">
           {category.description}
         </p>
       </div>

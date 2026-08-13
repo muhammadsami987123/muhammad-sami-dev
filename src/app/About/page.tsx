@@ -412,21 +412,21 @@ export default function About() {
   };
 
   return (
-    <Background className="py-24 lg:py-32">
+    <Background className="py-12 sm:py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4 tracking-tighter">
             Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Intelligence.</span>
           </h2>
-          <div className="flex justify-center mb-8">
-            <div className="h-1.5 w-32 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.4)] animate-pulse" />
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <div className="h-1.5 w-24 sm:w-32 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.4)] animate-pulse" />
           </div>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
+          <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg">
             Engineering the intersection of sophisticated web development and modular AI solutions.
           </p>
         </motion.div>
@@ -435,8 +435,8 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
         >
           {/* Profile Card Column */}
           <motion.div
@@ -444,9 +444,9 @@ export default function About() {
             className="lg:col-span-4 lg:sticky lg:top-24"
           >
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
-              <div className="relative bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden border border-zinc-100 dark:border-zinc-800 shadow-xl">
-                <div className="aspect-[4/5] relative bg-zinc-100 dark:bg-zinc-800">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl sm:rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
+              <div className="relative bg-white dark:bg-zinc-900 rounded-3xl sm:rounded-[2rem] overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-xl">
+                <div className="aspect-[4/3] sm:aspect-[4/5] relative bg-zinc-100 dark:bg-zinc-800">
                   <Image
                     src="/new-profile.png"
                     alt="Muhammad Sami"
@@ -455,13 +455,13 @@ export default function About() {
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 left-6">
-                    <h3 className="text-2xl font-bold text-white tracking-tight">Muhammad Sami</h3>
-                    <p className="text-zinc-300 text-xs font-bold uppercase tracking-widest mt-1">AI & Full-Stack Engineer</p>
+                  <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Muhammad Sami</h3>
+                    <p className="text-zinc-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest mt-1">AI & Full-Stack Engineer</p>
                   </div>
                 </div>
 
-                <div className="p-8 space-y-6">
+                <div className="p-5 sm:p-8 space-y-5 sm:space-y-6">
                   <div className="flex justify-center gap-6">
                     {[
                       { href: "https://www.linkedin.com/in/muhammad-sami-3aa6102b8/", icon: <FiLinkedin />, label: "LinkedIn" },
@@ -492,7 +492,7 @@ export default function About() {
                     <a
                       href="/resume.pdf"
                       target="_blank"
-                      className="flex items-center justify-center gap-2 py-3 border-2 border-zinc-100 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-xl font-bold text-xs transition-all hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98]"
+                      className="flex items-center justify-center gap-2 py-3 border border-zinc-300 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-xl font-bold text-xs transition-all hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-[0.98]"
                     >
                       <FiDownload /> Get PDF
                     </a>
@@ -505,19 +505,19 @@ export default function About() {
           {/* Tab Content Column */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-8 space-y-12"
+            className="lg:col-span-8 space-y-8 sm:space-y-12"
           >
             {/* Premium Single-Line Tab Navigation */}
-            <div className="sticky top-20 z-30 -mx-4 px-4 py-4 mb-4 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md lg:relative lg:top-0 lg:p-0 lg:bg-transparent lg:backdrop-blur-none lg:mx-0">
+            <div className="sticky top-16 z-30 -mx-4 px-4 py-3 mb-2 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md lg:relative lg:top-0 lg:p-0 lg:bg-transparent lg:backdrop-blur-none lg:mx-0">
               <div className="relative group/tabs">
                 {/* Horizontal Scroll Area */}
-                <div className="flex bg-zinc-100/50 dark:bg-zinc-900/50 p-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-800/50 w-full overflow-x-auto no-scrollbar scroll-smooth">
+                <div className="flex bg-zinc-100/80 dark:bg-zinc-900/80 p-1.5 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 w-full overflow-x-auto no-scrollbar scroll-smooth">
                   <div className="flex flex-nowrap gap-1">
                     {tabs.map((tab) => (
                       <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex items-center gap-2.5 py-3 px-6 text-[13px] font-bold rounded-xl transition-all whitespace-nowrap shrink-0 ${activeTab === tab.id
+                        className={`flex items-center gap-2 py-2.5 px-4 sm:px-6 text-xs sm:text-[13px] font-bold rounded-xl transition-all whitespace-nowrap shrink-0 ${activeTab === tab.id
                           ? 'bg-white dark:bg-zinc-800 text-blue-600 dark:text-blue-400 shadow-sm ring-1 ring-zinc-200 dark:ring-zinc-700'
                           : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300'
                           }`}
