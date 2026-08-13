@@ -43,14 +43,14 @@ export default function Hero() {
       <div className="container-width px-6 sm:px-10 lg:px-16 pt-28 pb-16 w-full">
 
         {/* ── BALANCED TWO-COLUMN ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-1 justify-between">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-1 justify-between lg:translate-y-2">
 
           {/* ── LEFT: Text ── */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left"
+            className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-8"
           >
             {/* Badge */}
             <motion.div
