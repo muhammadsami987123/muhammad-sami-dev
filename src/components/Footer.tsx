@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-zinc-100 dark:bg-zinc-950 border-t border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 pt-20 pb-12 transition-colors duration-300">
+    <footer className="relative overflow-hidden bg-zinc-100 dark:bg-zinc-950 border-t border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 pt-10 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 transition-colors duration-300">
       {/* Glow Effects */}
       <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl overflow-hidden opacity-30">
         <div className="absolute -bottom-24 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl" />
@@ -27,7 +27,7 @@ export default function Footer() {
       </div>
 
       <div className="container-width relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 mb-12 lg:mb-16">
 
           {/* Brand Column with Profile Image */}
           <div className="lg:col-span-5 space-y-6">
@@ -62,6 +62,8 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Right columns: Navigation + Connect + External Profiles */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:contents">
           {/* Quick Links Column */}
           <div className="lg:col-span-2 space-y-5">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-900 dark:text-zinc-200">Navigation</h4>
@@ -110,7 +112,7 @@ export default function Footer() {
           </div>
 
           {/* External Profiles Column */}
-          <div className="lg:col-span-3 space-y-5">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-3 space-y-5">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-900 dark:text-zinc-200">External Profiles</h4>
             <div className="space-y-3">
               <a
@@ -139,9 +141,9 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
+          </div>{/* closes grid-cols-2 sm:grid-cols-3 wrapper */}
+        </div>{/* closes lg:grid-cols-12 outer grid */}
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-300 dark:border-zinc-800/80 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col items-center md:items-start gap-1">
             <p className="text-[11px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">

@@ -169,7 +169,7 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section className="py-24 relative overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
+        <section className="py-14 sm:py-24 relative overflow-hidden bg-zinc-50/50 dark:bg-zinc-900/20">
             <style jsx>{`
                 @keyframes scroll {
                     0% { transform: translateX(0); }
@@ -199,7 +199,7 @@ export default function Testimonials() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight"
                     >
                         Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Feedback.</span>
                     </motion.h2>
@@ -208,19 +208,19 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg"
+                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg"
                     >
                         Trusted by technical leaders and industry pioneers across the globe.
                     </motion.p>
                 </div>
 
                 {/* Infinite Slider Container */}
-                <div className="marquee-container w-full overflow-hidden py-10">
-                    <div className="marquee-track gap-8 px-4">
+                <div className="marquee-container w-full overflow-hidden py-6 sm:py-10">
+                    <div className="marquee-track gap-5 sm:gap-8 px-4">
                         {[...testimonials, ...testimonials].map((testimonial, index) => (
                             <div
                                 key={`${testimonial.name}-${index}`}
-                                className="relative w-[350px] md:w-[450px] flex-shrink-0 p-8 rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default"
+                                className="relative w-[280px] sm:w-[350px] md:w-[450px] flex-shrink-0 p-5 sm:p-8 rounded-[2rem] bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-default"
                             >
                                 <div className="absolute top-8 right-8 text-blue-100 dark:text-blue-900/20 group-hover:text-blue-200 dark:group-hover:text-blue-900/40 transition-colors">
                                     <FiMessageSquare size={40} />
@@ -232,7 +232,7 @@ export default function Testimonials() {
                                     ))}
                                 </div>
 
-                                <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed mb-6 italic h-24 line-clamp-4">
+                                <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 italic h-20 sm:h-24 line-clamp-4">
                                     &quot;{testimonial.content}&quot;
                                 </p>
 

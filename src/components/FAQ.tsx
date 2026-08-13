@@ -39,7 +39,7 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 lg:py-28 bg-zinc-50/50 dark:bg-black/50 relative overflow-hidden" id="faq">
+        <section className="py-12 sm:py-20 lg:py-28 bg-zinc-50/50 dark:bg-black/50 relative overflow-hidden" id="faq">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Centered Top Header */}
                 <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
@@ -90,9 +90,9 @@ export default function FAQ() {
                             >
                                 <button
                                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                                    className="w-full p-5 sm:p-6 flex items-center justify-between text-left focus:outline-none gap-4"
+                                    className="w-full p-4 sm:p-5 md:p-6 flex items-center justify-between text-left focus:outline-none gap-3 sm:gap-4 min-h-[56px]"
                                 >
-                                    <span className={`text-base sm:text-lg font-bold transition-colors duration-300 ${
+                                    <span className={`text-sm sm:text-base lg:text-lg font-bold transition-colors duration-300 ${
                                         isOpen
                                             ? 'text-blue-600 dark:text-blue-400'
                                             : 'text-zinc-900 dark:text-white'

@@ -29,7 +29,7 @@ const ventures = [
 
 export default function Startups() {
   return (
-    <section id="startups" className="py-14 lg:py-16 bg-white dark:bg-black">
+    <section id="startups" className="py-10 sm:py-14 lg:py-16 bg-white dark:bg-black">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-8">
@@ -67,7 +67,7 @@ export default function Startups() {
               {/* Thin top accent line */}
               <div className={`h-[3px] w-full bg-gradient-to-r ${venture.accent} shrink-0`} />
 
-              <div className="flex flex-col flex-1 p-6">
+              <div className="flex flex-col flex-1 p-4 sm:p-6">
                 {/* Logo + date row */}
                 <div className="flex items-center justify-between mb-5">
                   <div className="relative w-[52px] h-[52px] rounded-xl border border-zinc-100 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-800 overflow-hidden shadow-inner shrink-0">
@@ -84,7 +84,7 @@ export default function Startups() {
                 </div>
 
                 {/* Company name + role */}
-                <h3 className="text-[22px] font-bold leading-tight tracking-tight text-zinc-900 dark:text-white">
+                <h3 className="text-lg sm:text-[22px] font-bold leading-tight tracking-tight text-zinc-900 dark:text-white">
                   {venture.title}
                 </h3>
                 <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-blue-600 dark:text-blue-400">
@@ -102,7 +102,7 @@ export default function Startups() {
                     href={venture.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-zinc-600 transition-colors hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400"
+                    className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-zinc-600 transition-colors hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 min-h-[44px] sm:min-h-0"
                   >
                     Visit Website
                     <FiArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

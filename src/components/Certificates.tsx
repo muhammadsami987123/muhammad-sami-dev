@@ -119,12 +119,12 @@ const certificates: Certificate[] = [
 export default function Certificates() {
   return (
     <div className="space-y-8">
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
         <div className="p-3 rounded-2xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400">
           <FiAward size={24} />
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Certifications & Credentials</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">Certifications & Credentials</h3>
           <p className="text-zinc-500 dark:text-zinc-400 text-sm">Current AI, automation, cloud, MCP, and frontend credentials from LinkedIn.</p>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function Certificates() {
             transition={{ delay: index * 0.03 }}
             className="group relative p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-amber-200 dark:hover:border-amber-900/50 transition-all shadow-sm hover:shadow-md"
           >
-            <div className="flex items-start justify-between gap-4 mb-3">
+            <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-[10px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
