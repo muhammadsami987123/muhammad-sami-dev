@@ -1,1272 +1,459 @@
-# FINAL UI REFINEMENT: ALL PROJECTS PAGE + PROJECT DETAIL MODAL
+# Project Detail Modal: Add a Clear Animated Scroll Indicator
 
-The current implementation has gone too far with the visual treatment.
+The current project detail modal works correctly, but there is one important UX problem.
 
-I want a much simpler, cleaner and more professional portfolio experience.
+When a user opens a project, the modal contains more content below the visible viewport. However, there is **no obvious visual indication that the modal is scrollable**.
 
-The uploaded screenshot shows the current `/AllProjects` implementation. The main issue is that the page has become unnecessarily large and complicated.
+A user may not realize that they need to scroll inside the modal to see:
 
-Do NOT create another oversized hero section.
+* Overview
+* Features
+* Technology stack
+* Project details
+* Live Demo
+* GitHub / Source
 
-Do NOT over-design the page.
+The uploaded screenshot shows the current modal. Keep the existing design, but add a subtle, elegant visual cue that clearly communicates:
 
-The portfolio should feel like a premium engineer's project archive.
-
----
-
-# 1. CORE REQUIREMENT
-
-The `/AllProjects` page must contain:
-
-1. A very simple page heading
-2. A compact search/filter bar
-3. A separate **Top Projects** section
-4. A separate **All Projects** section
-5. All projects displayed together in the All Projects section
-6. Small, compact project cards
-7. Clicking a project opens a polished project detail modal
-8. Projects without images must have beautiful generated/fallback project covers
-
-The homepage is different:
-
-### Homepage
-
-Only **6 featured projects**.
-
-### `/AllProjects`
-
-All projects.
-
-The two experiences must not be confused.
+> "There is more content below. Scroll down."
 
 ---
 
-# 2. REMOVE THE GIANT HERO FROM ALL PROJECTS
+## 1. ADD AN ANIMATED SCROLL INDICATOR
 
-The current page has:
+Place a small animated scroll indicator at the **bottom-center of the modal's content area**.
+
+It should look like a minimal downward arrow.
+
+Example concept:
 
 ```text
-DIGITAL ARCHIVE
-
-Projects
-
-An evolving archive of AI systems, intelligent products,
-full-stack platforms, developer tools...
-
-[ TOP ] [ CURRENT ] [ ARCHIVE ]
+              ↓
+           scroll
 ```
 
-This is too much.
-
-REMOVE the large dashboard-style hero.
-
-Remove:
-
-* "DIGITAL ARCHIVE" badge
-* Large statistics cards
-* TOP count
-* CURRENT count
-* ARCHIVE count
-* Large descriptive paragraph
-* Giant background glow
-* Oversized hero spacing
-
-I do not need a dashboard on my portfolio projects page.
-
----
-
-# 3. SIMPLE PAGE HEADER
-
-Replace the entire hero with something extremely simple.
-
-Use:
-
-# All Projects
-
-Small supporting text:
-
-> A collection of my AI, full-stack, developer, and product engineering work.
-
-That's enough.
-
-The layout should be approximately:
-
-```text
-All Projects
-
-A collection of my AI, full-stack, developer, and product engineering work.
-
-[ Search... ] [ All ] [ AI & Agents ] [ AI Applications ] [ Developer Tools ] ...
-```
-
-No giant cards.
-
-No statistics.
-
-No unnecessary visual blocks.
-
----
-
-# 4. PAGE SPACING
-
-The page should begin relatively close to the navbar.
-
-Do not leave a huge empty vertical area between navbar and title.
-
-Recommended:
-
-```text
-Navbar
-   ↓
-small spacing
-   ↓
-All Projects
-description
-   ↓
-search/filter
-   ↓
-Top Projects
-```
-
-Keep the entire header compact.
-
----
-
-# 5. TOP PROJECTS MUST BE A SEPARATE SECTION
-
-Create:
-
-## Top Projects
-
-Short description:
-
-> The strongest examples of my current engineering work.
-
-Then show the strongest projects.
-
-IMPORTANT:
-
-This is a separate section from All Projects.
-
-Do not mix Top Projects and All Projects into one list.
-
----
-
-# 6. TOP PROJECT CARD SIZE
-
-Top Projects should use compact cards.
-
-Desktop:
-
-**3 cards per row**
-
-Tablet:
-
-**2 cards**
-
-Mobile:
-
-**1 card**
-
-Target card size:
-
-### Desktop
-
-Approximately:
-
-* Width: 350–390px
-* Image height: 170–200px
-* Total card height: approximately 350–430px
-
-Do NOT create giant cards.
-
-The cards should feel like compact portfolio tiles.
-
----
-
-# 7. ALL PROJECTS MUST BE A SEPARATE SECTION
-
-After Top Projects, create:
-
-# All Projects
-
-Small description:
-
-> Explore the complete collection of projects, experiments, platforms, and engineering work.
-
-Then show **EVERY PROJECT**.
-
-This section must contain the complete portfolio.
-
-Do not show only current projects.
-
-Do not hide archived projects.
-
-Do not require a special "Archive" mode to see them.
-
-All projects should be visible in the All Projects section.
-
----
-
-# 8. ALL PROJECTS GRID
-
-Use a compact grid.
-
-Desktop:
-
-```text
-[ Project ] [ Project ] [ Project ]
-[ Project ] [ Project ] [ Project ]
-[ Project ] [ Project ] [ Project ]
-[ Project ] [ Project ] [ Project ]
-...
-```
-
-3-column grid.
-
-Tablet:
-
-2 columns.
-
-Mobile:
-
-1 column.
-
-Keep cards compact and consistent.
-
----
-
-# 9. DO NOT MAKE ALL PROJECT CARDS HUGE
-
-This is one of the most important changes.
-
-The current project cards occupy too much space.
-
-Reduce:
-
-* card height
-* image height
-* padding
-* typography
-* badge count
-* description length
-* button size
-
-A user should be able to scan many projects quickly.
-
-The All Projects page is an **archive**, not a case-study page.
-
----
-
-# 10. PROJECT CARD DESIGN
-
-Use:
-
-```text
-┌───────────────────────────┐
-│                           │
-│         IMAGE             │
-│                           │
-├───────────────────────────┤
-│ CATEGORY                  │
-│                           │
-│ ChatForge                 │
-│ Open-source AI chatbot... │
-│                           │
-│ Next.js  TypeScript  +3  │
-│                           │
-│ Source       Details →    │
-└───────────────────────────┘
-```
-
-Keep it clean.
-
-No excessive UI elements.
-
-No huge buttons.
-
-No unnecessary statistics.
-
----
-
-# 11. PROJECT IMAGE SIZE
-
-Use a consistent image ratio.
+But keep the actual UI much cleaner.
 
 Prefer:
 
 ```text
-16:9
+        ↓
 ```
 
-or approximately:
+or a small double-chevron:
 
 ```text
-1.8 : 1
+        ˅
 ```
 
-Desktop image height should generally be around:
-
-**170–200px**
-
-not 300–400px.
+with a subtle animation.
 
 ---
 
-# 12. PROJECT DESCRIPTION
+## 2. POSITION
 
-Descriptions must be short.
+The indicator must be:
 
-Maximum:
+**Bottom-center of the modal**
 
-**2 lines**
+Not at the bottom of the browser window.
 
-Use line clamp.
+Not outside the modal.
+
+Not inside the project image.
+
+It should visually sit over/near the bottom edge of the scrollable content area.
 
 Example:
 
 ```text
-Open-source AI platform for building
-RAG-powered conversational interfaces...
+┌───────────────────────────────┐
+│                               │
+│       PROJECT IMAGE           │
+│                               │
+├───────────────────────────────┤
+│                               │
+│  Project Title                │
+│                               │
+│  Description                  │
+│                               │
+│  Overview                     │
+│  More content below...        │
+│                               │
+│              ↓                │
+└───────────────────────────────┘
 ```
 
-Do not put entire README descriptions inside cards.
-
-The detailed information will appear in the project modal.
+The indicator should make it immediately obvious that more content exists below.
 
 ---
 
-# 13. TECHNOLOGY BADGES
+## 3. ANIMATION
 
-Only show 3–4 technologies.
+The arrow should have a very subtle continuous animation.
 
-Example:
+Recommended behavior:
 
 ```text
-Next.js
-TypeScript
-OpenAI
-+4
+opacity: 0.5 → 1 → 0.5
+
+translateY:
+0px → 5px → 0px
 ```
 
-Do not display 10+ technology badges.
+Loop continuously.
 
-This is a card, not a README.
+The animation should feel like:
 
----
+**"Scroll down"**
 
-# 14. TOP PROJECTS SELECTION
+not like a notification or attention-grabbing advertisement.
 
-The Top Projects section should contain the strongest projects from the new project collection.
+Keep it slow and smooth.
 
-Prioritize projects such as:
-
-* V2C
-* ChatForge
-* ShopSense
-* Wanderlux
-* Octet
-* 30-Day Enterprise AI Suite
-* AgentHive
-* Freelance AI
-
-But use actual repository quality and project data to determine the final selection.
-
-Do not choose based only on the project name.
-
----
-
-# 15. ALL PROJECTS MUST CONTAIN EVERYTHING
-
-The All Projects section should include:
-
-* New projects
-* Current projects
-* Older projects
-* Archived projects
-* Previous portfolio projects
-
-Nothing should disappear from the archive simply because it is no longer featured.
-
-The purpose of this page is to show the evolution and breadth of my work.
-
----
-
-# 16. SEARCH AND FILTERS
-
-Keep the search and filtering functionality.
-
-But make it compact.
-
-Use:
+Suggested duration:
 
 ```text
-[ 🔍 Search projects... ]
-
-[ All ]
-[ AI & Agents ]
-[ AI Applications ]
-[ Developer Tools ]
-[ Full Stack ]
-[ E-Commerce ]
-[ Open Source ]
+1.4s – 1.8s
 ```
 
-Do not make the filter bar huge.
-
-On mobile, filters can become horizontally scrollable or use a compact dropdown.
-
----
-
-# 17. REMOVE UNNECESSARY STATISTICS
-
-Remove the current:
+with:
 
 ```text
-8 TOP
-11 CURRENT
-11 ARCHIVE
-```
-
-These statistics do not add meaningful value to the project archive.
-
-The projects themselves are the important information.
-
----
-
-# 18. PROJECT DETAIL SHOULD OPEN AS A MODAL
-
-This is very important.
-
-Currently clicking a project can lead to an ugly standalone project page.
-
-I do NOT want that experience.
-
-When a user clicks:
-
-```text
-Details →
-```
-
-or clicks the project card,
-
-open a polished project detail modal.
-
-The page behind it should remain visible.
-
----
-
-# 19. PROJECT MODAL DESIGN
-
-The modal should feel like a premium modern frontend interface.
-
-Desktop:
-
-Approximately:
-
-```text
-width: 850px–1050px
-max-height: 85vh
-```
-
-Center it on screen.
-
-Use:
-
-* backdrop blur
-* subtle dark/transparent overlay
-* rounded corners
-* subtle border
-* soft shadow
-* smooth entrance animation
-* smooth exit animation
-
-Do not make it full-screen on desktop.
-
----
-
-# 20. MODAL STRUCTURE
-
-Example:
-
-```text
-┌───────────────────────────────────────────────────┐
-│                                                   │
-│  [ Project Image ]                         ×      │
-│                                                   │
-│  AI & AGENTS                                     │
-│                                                   │
-│  ChatForge                                       │
-│  Open-source AI application platform...          │
-│                                                   │
-│  ─────────────────────────────────────────────    │
-│                                                   │
-│  Overview                                         │
-│                                                   │
-│  Detailed project description...                  │
-│                                                   │
-│  Key Features                                     │
-│  • Visual flow builder                            │
-│  • RAG knowledge base                             │
-│  • Embeddable widget                              │
-│  • Streaming API                                  │
-│                                                   │
-│  Technologies                                     │
-│  Next.js · TypeScript · PostgreSQL · OpenAI       │
-│                                                   │
-│  [ Live Demo ]       [ GitHub / Source ]          │
-│                                                   │
-└───────────────────────────────────────────────────┘
+ease-in-out
+infinite
 ```
 
 ---
 
-# 21. MODAL CONTENT
+## 4. USE A CHEVRON / ARROW
 
-The card stays short.
-
-The modal contains the detailed information.
-
-Include:
-
-### Project title
-
-### Category
-
-### Short overview
-
-### Key features
-
-### Technology stack
-
-### Project status
-
-### GitHub
-
-### Live Demo if available
-
-Optional:
-
-### Architecture
-
-Only show architecture information if it is supported by the repository.
-
-Do not fabricate information.
-
----
-
-# 22. MODAL ANIMATION
-
-Use a professional animation.
-
-Opening:
-
-* backdrop fades in
-* modal scales from approximately 0.96 → 1
-* opacity 0 → 1
-* subtle upward movement
-
-Closing:
-
-* reverse animation
-
-Use Framer Motion if it already exists in the project.
-
-Do not introduce another animation library just for this.
-
----
-
-# 23. MODAL SCROLLING
-
-The modal itself should scroll internally if the content is long.
-
-The page behind it should not scroll while the modal is open.
-
-Implement proper body scroll locking.
-
-Do not let the modal exceed the viewport.
-
-Use something equivalent to:
-
-```text
-max-height: 85vh
-overflow-y: auto
-```
-
----
-
-# 24. MODAL MOBILE DESIGN
-
-On mobile, the modal can become a bottom sheet or near-full-screen dialog.
-
-Preferred:
-
-```text
-┌─────────────────────┐
-│                     │
-│       IMAGE         │
-│                     │
-├─────────────────────┤
-│ ChatForge       ×   │
-│                     │
-│ Overview            │
-│ ...                 │
-│                     │
-│ Features            │
-│ ...                 │
-│                     │
-│ [ Live Demo ]       │
-│ [ GitHub ]          │
-└─────────────────────┘
-```
-
-Use approximately:
-
-```text
-width: 100%
-max-height: 92vh
-```
-
-with appropriate safe-area spacing.
-
----
-
-# 25. CLOSE INTERACTIONS
-
-The modal must close through:
-
-* X button
-* Escape key
-* Clicking backdrop
-
-Do not close when clicking inside the modal.
-
-Make the close button accessible.
-
----
-
-# 26. URL / ROUTING
-
-Do not create unnecessary ugly routes for every project if the modal can work cleanly with the existing project architecture.
-
-If deep linking is already supported, preserve it.
-
-If possible, support a project identifier through query/hash state while still displaying the modal.
-
-Example:
-
-```text
-/AllProjects?project=chatforge
-```
-
-This is optional.
-
-Do not break existing project routes.
-
----
-
-# 27. MISSING PROJECT IMAGES
-
-This is another major problem.
-
-Some projects currently have no image.
-
-I do NOT want:
-
-* broken image icons
-* empty white boxes
-* "image not found"
-* random stock images
-* unrelated stock photography
-
-Every project must have a visually intentional cover.
-
----
-
-# 28. FALLBACK PROJECT COVER SYSTEM
-
-Create a reusable `ProjectCover` component.
-
-Behavior:
-
-```text
-if real project image exists
-    → show real project image
-
-else
-    → show generated project cover
-```
-
-The fallback should be project-specific.
-
-Do NOT use one generic placeholder for every project.
-
----
-
-# 29. PROJECT-SPECIFIC FALLBACK COVERS
-
-Create elegant visual covers based on the project's identity.
-
-Examples:
-
-### ChatForge
-
-Visual:
-
-* dark technical background
-* connected conversation nodes
-* central chatbot node
-* subtle flow lines
-
-Text:
-
-**CHATFORGE**
-
-Small subtitle:
-
-`AI CHATBOT BUILDER`
-
----
-
-### V2C
-
-Visual:
-
-* waveform
-* code panel
-* microphone/voice visualization
-* subtle developer-tool aesthetic
-
-Text:
-
-**V2C**
-
-Subtitle:
-
-`VOICE TO CODE`
-
----
-
-### ShopSense
-
-Visual:
-
-* AI assistant interface
-* product cards
-* shopping flow
-* subtle multilingual text elements
-
-Text:
-
-**SHOPSENSE**
-
-Subtitle:
-
-`AI SHOPPING ASSISTANT`
-
----
-
-### Wanderlux
-
-Visual:
-
-* luxury travel
-* destination map
-* aircraft/route line
-* premium editorial typography
-
-Text:
-
-**WANDERLUX**
-
-Subtitle:
-
-`AI TRAVEL PLATFORM`
-
----
-
-### Octet
-
-Visual:
-
-* eight connected nodes
-* central orchestration point
-* agent architecture aesthetic
-
-Text:
-
-**OCTET**
-
-Subtitle:
-
-`EIGHT AI AGENTS`
-
----
-
-### Aerion
-
-Visual:
-
-* aircraft silhouette
-* aviation route
-* premium editorial typography
-
-Text:
-
-**AERION**
-
-Subtitle:
-
-`PRIVATE SKY CHARTER`
-
----
-
-### AgentHive
-
-Use the actual repository identity and architecture.
-
-Text:
-
-**AGENTHIVE**
-
-Subtitle:
-
-A concise project-specific description.
-
----
-
-### Freelance AI
-
-Use the actual repository identity.
-
-Text:
-
-**FREELANCE AI**
-
-Subtitle:
-
-Based on the actual repository purpose.
-
----
-
-### Velocité
-
-Visual:
-
-* luxury car silhouette
-* automotive lines
-* premium black/editorial aesthetic
-
-Text:
-
-**VELOCITÉ**
-
-Subtitle:
-
-`LUXURY AUTOMOTIVE`
-
----
-
-### ZafBazaar
-
-Visual:
-
-* ecommerce/product layout
-* marketplace-inspired composition
-* use the real branding if available
-
-Text:
-
-**ZAF BAZAAR**
-
-Subtitle:
-
-Based on the actual website.
-
----
-
-### Enterprise AI Suite
-
-Visual:
-
-* multi-system architecture
-* connected AI modules
-* enterprise technical aesthetic
-
-Text:
-
-**ENTERPRISE AI SUITE**
-
-Subtitle:
-
-`30-DAY OPEN-SOURCE CHALLENGE`
-
----
-
-# 30. FALLBACK COVER DESIGN RULES
-
-Fallback covers should NOT look like fake screenshots.
-
-They should clearly feel like:
-
-**designed project artwork / project cover**
-
-not:
-
-**a screenshot of the application.**
-
-You can include a very subtle label such as:
-
-```text
-PROJECT COVER
-```
-
-if necessary, but do not make it visually distracting.
-
----
-
-# 31. USE TYPOGRAPHY IN FALLBACK COVERS
-
-The project name should be the primary visual element.
+Use a clean icon from the icon library already used by the project.
 
 For example:
 
 ```text
-CHATFORGE
-
-AI CHATBOT BUILDER
+ChevronDown
 ```
+
+or an equivalent existing icon.
+
+Do NOT introduce a new icon library just for this.
+
+The icon should be approximately:
+
+```text
+16px – 20px
+```
+
+Do not make it large.
+
+---
+
+## 5. ADD A SUBTLE BACKDROP / GRADIENT
+
+Because the modal content may pass behind the indicator, add a very subtle bottom fade.
+
+For example:
+
+```text
+transparent
+        ↓
+rgba(background, 0.95)
+```
+
+This creates a small visual fade at the bottom of the scrollable area.
+
+The purpose is to communicate:
+
+**content continues below**
+
+without visually blocking the content.
+
+Keep the gradient very subtle.
+
+---
+
+## 6. IMPORTANT: INDICATOR SHOULD ONLY APPEAR WHEN SCROLLING IS POSSIBLE
+
+Do not show the indicator if the modal content fits entirely inside the viewport.
+
+Logic should be:
+
+```text
+if scrollHeight > clientHeight:
+    show scroll indicator
+else:
+    hide indicator
+```
+
+This is important.
+
+The indicator should only exist when there is actually more content below.
+
+---
+
+## 7. HIDE IT WHEN THE USER SCROLLS DOWN
+
+Once the user starts scrolling, gradually hide the indicator.
+
+Example behavior:
+
+### Modal opens
+
+```text
+           ↓
+        animated
+```
+
+### User scrolls
+
+```text
+indicator fades out
+```
+
+### User returns to the top
+
+```text
+indicator fades back in
+```
+
+You can use a small threshold such as:
+
+```text
+scrollTop < 30px
+```
+
+to determine whether the user is still near the top.
+
+---
+
+## 8. SHOW IT AGAIN WHEN USER RETURNS TO TOP
+
+If:
+
+```text
+scrollTop <= 30
+```
+
+show the animated indicator again.
+
+If:
+
+```text
+scrollTop > 30
+```
+
+hide it.
+
+This creates a natural UX cue without permanently occupying the interface.
+
+---
+
+## 9. DO NOT ADD TEXT
+
+Do not add:
+
+```text
+Scroll down to see more
+```
+
+or:
+
+```text
+More details below
+```
+
+The animation should communicate this visually.
+
+Keep the UI minimal.
+
+---
+
+## 10. OPTIONAL HOVER / INTERACTION
+
+If appropriate, make the indicator slightly interactive.
+
+When hovered:
+
+```text
+opacity: 1
+```
+
+The cursor can indicate that it is interactive.
+
+Clicking it can smoothly scroll the modal down by approximately:
+
+```text
+150–250px
+```
+
+This is optional but recommended.
+
+If implemented, use smooth scrolling.
+
+---
+
+## 11. MODAL SCROLLING MUST REMAIN INSIDE THE MODAL
+
+Make sure the user is scrolling the **modal content**, not the page behind it.
+
+The modal should continue using something similar to:
+
+```css
+max-height: 85vh;
+overflow-y: auto;
+```
+
+The body/background should remain locked while the modal is open.
+
+Do not change this behavior just to implement the indicator.
+
+---
+
+## 12. VISUAL STYLE
+
+The indicator must match the existing portfolio.
 
 Use:
 
-* strong typography
-* subtle technical patterns
-* minimal icons
-* project-specific visual language
+* subtle blue accent
+* thin stroke
+* small size
+* soft opacity
+* smooth animation
+* minimal visual weight
 
-Avoid:
+Do NOT use:
 
-* giant random icons
-* cartoon robots
-* stock photography
-* generic AI brain graphics
+* bright glowing arrows
+* large animated icons
+* bouncing emojis
+* oversized scroll graphics
+* distracting text
+* flashy animations
 
----
-
-# 32. PROJECT COVER COLORS
-
-Use colors based on the project.
-
-Examples:
-
-ChatForge:
-dark blue / cyan
-
-V2C:
-dark navy / electric cyan
-
-ShopSense:
-deep green / teal
-
-Wanderlux:
-warm luxury / dark travel
-
-Aerion:
-black / ivory / aviation tones
-
-Octet:
-deep blue / violet
-
-Velocité:
-black / silver / luxury tones
-
-But keep the overall portfolio design coherent.
+It should look like a deliberate part of the UI.
 
 ---
 
-# 33. IMAGE HANDLING
+## 13. DESKTOP
 
-Implement robust image handling.
-
-If an image fails to load:
+Desktop placement:
 
 ```text
-onError
-→ switch to ProjectCover fallback
+             ↓
+        bottom-center
 ```
 
-Do not leave a broken image.
+Keep approximately:
 
-Also make sure:
+```text
+bottom: 12px–18px
+```
 
-* correct aspect ratio
-* object-fit: cover
-* no layout shift
-* lazy loading
-* optimized images
+inside the scrollable modal area.
 
 ---
 
-# 34. ALL PROJECT PAGE SHOULD FEEL DENSE
+## 14. MOBILE
 
-The archive should let the visitor scan many projects quickly.
+On mobile, make the indicator slightly smaller and keep it centered.
 
-Think:
+It must not overlap:
 
-**GitHub + premium portfolio**
-
-not:
-
-**marketing landing page**
-
-The visitor should be able to see many projects without excessive scrolling.
-
----
-
-# 35. BACKGROUND
-
-Keep the current subtle technical background if it already exists.
-
-But reduce:
-
-* huge blue glow
-* giant radial gradients
-* excessive visual noise
-
-Use a subtle:
-
-* white/off-white background
-* light grid
-* very faint blue tint
-
-The projects should remain the focus.
-
----
-
-# 36. NAVBAR
-
-Do not change the navbar unnecessarily.
-
-Keep:
-
-* Muhammad Sami
-* About
-* Startups
-* Projects
-* Skills
-* Contact
+* important text
+* buttons
+* Live Demo
 * GitHub
+* close button
 
-Only adjust spacing if necessary for the new page.
+If the modal becomes a near-full-screen mobile sheet, position it relative to the modal's scroll container.
 
 ---
 
-# 37. PAGE STRUCTURE
+## 15. ACCESSIBILITY
 
-Final page should look approximately like this:
+Respect:
 
 ```text
-NAVBAR
-
-All Projects
-A collection of my AI, full-stack, developer, and product engineering work.
-
-[ Search ] [ All ] [ AI & Agents ] [ AI Applications ] ...
-
-Top Projects
-The strongest examples of my current engineering work.
-
-[ Card ] [ Card ] [ Card ]
-[ Card ] [ Card ] [ Card ]
-
-All Projects
-Explore the complete collection of my work.
-
-[ Card ] [ Card ] [ Card ]
-[ Card ] [ Card ] [ Card ]
-[ Card ] [ Card ] [ Card ]
-[ Card ] [ Card ] [ Card ]
-...
-
+prefers-reduced-motion
 ```
 
-That's it.
+When reduced motion is enabled:
 
-No statistics dashboard.
+* remove the continuous animation
+* keep the static downward chevron visible when scrolling is possible
 
-No giant hero.
+Do not make the UX dependent on animation alone.
 
-No oversized intro.
-
-No unnecessary sections.
-
----
-
-# 38. HOMEPAGE VS ALL PROJECTS
-
-Maintain this exact distinction:
-
-## Homepage
-
-Only:
-
-**6 Featured Projects**
-
-Displayed in the compact horizontal carousel.
-
-## All Projects
-
-Contains:
-
-**All projects**
-
-with:
-
-**Top Projects**
-+
-**All Projects**
-
-Do not put only 6 projects on `/AllProjects`.
-
-Do not duplicate the homepage carousel there.
+Also ensure sufficient contrast.
 
 ---
 
-# 39. CARD CLICK BEHAVIOR
+## 16. DO NOT REDESIGN THE MODAL
 
-Clicking:
+This is important.
 
+Do NOT rebuild the modal.
+
+Do NOT change:
+
+* modal dimensions
 * project image
-* project title
-* Details
+* typography
+* project content
+* badges
+* buttons
+* colors
+* overall layout
 
-should open the same project modal.
-
-The modal should be the single source of detailed project information.
-
-Do not create three different experiences.
-
----
-
-# 40. ACCESSIBILITY
-
-The modal must use proper dialog semantics.
-
-Implement:
-
-* `role="dialog"`
-* `aria-modal="true"`
-* accessible title
-* keyboard focus handling
-* Escape to close
-* visible focus state
-
-When the modal opens:
-
-* move focus into it
-
-When it closes:
-
-* return focus to the triggering project card/button
+The only purpose of this change is to make the modal's scrollability obvious.
 
 ---
 
-# 41. PERFORMANCE
+# FINAL UX
 
-Do not load every project's large image immediately.
+When the user opens a project, the experience should be:
 
-Use:
+```text
+┌─────────────────────────────────────┐
+│                              ×      │
+│                                     │
+│          PROJECT IMAGE              │
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│  V2C — Voice to Code                │
+│                                     │
+│  Description...                     │
+│                                     │
+│  OVERVIEW                           │
+│                                     │
+│  Content continues below...         │
+│                                     │
+│                 ↓                   │
+└─────────────────────────────────────┘
+```
 
-* lazy loading
-* optimized image dimensions
-* next/image if applicable
-* lightweight fallback covers
-* no unnecessary client rendering
+The animated chevron should immediately communicate:
 
-The All Projects page may contain many projects, so performance matters.
+**"There is more content below. Scroll."**
 
----
+After the user scrolls:
 
-# 42. DO NOT BREAK EXISTING DATA
+```text
+↓
+fades out
+```
 
-Do not remove any existing project.
+When the user returns to the top:
 
-Do not lose:
+```text
+↓
+fades back in
+```
 
-* GitHub URLs
-* Live demo URLs
-* project metadata
-* existing project categories
+Implement this cleanly with the existing animation system and existing icon library.
 
-Refactor only where necessary.
-
----
-
-# 43. FINAL VISUAL TARGET
-
-The final page should feel like this:
-
-### Simple header
-
-**All Projects**
-
-### Compact Top Projects
-
-Three cards per row.
-
-### Compact complete archive
-
-Many projects visible.
-
-### Elegant project interaction
-
-Click → beautiful modal.
-
-### Missing image handling
-
-Beautiful project-specific cover.
-
-The whole page should feel:
-
-**Clean**
-**Compact**
-**Technical**
-**Premium**
-**Professional**
-
-Not:
-
-**Huge**
-**Over-designed**
-**Dashboard-like**
-**Marketing-heavy**
-
----
-
-# 44. MOST IMPORTANT INSTRUCTION
-
-Look at the uploaded screenshot and specifically fix the problem visible there:
-
-The current `/AllProjects` page is using far too much vertical space before the actual projects begin.
-
-I want the project archive to start quickly.
-
-The visitor should reach:
-
-**Top Projects**
-
-within the first viewport.
-
-And shortly after:
-
-**All Projects**
-
-with compact cards.
-
-The page should be about the projects, not about the page decoration.
-
-Do not make the UI "fancy" for the sake of being fancy.
-
-Make it **simple enough to look expensive**.
-
-After implementation, test desktop, tablet and mobile and ensure there is no horizontal overflow, broken image, oversized section, or awkward modal behavior.
+Keep the interaction subtle, premium, and production-ready.

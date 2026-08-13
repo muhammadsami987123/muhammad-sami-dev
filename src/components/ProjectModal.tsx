@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useId, useRef } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FiExternalLink, FiGithub, FiLock, FiX } from 'react-icons/fi';
+import { FiChevronDown, FiExternalLink, FiGithub, FiLock, FiX } from 'react-icons/fi';
 
 import ProjectCover from '@/components/ProjectCover';
 import type { Project } from '@/data/projects';
@@ -17,8 +17,11 @@ export default function ProjectModal({
   onClose: () => void;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const open = Boolean(project);
+  const [canScroll, setCanScroll] = useState(false);
+  const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {
     if (!open) return;
@@ -66,6 +69,33 @@ export default function ProjectModal({
     };
   }, [open, onClose]);
 
+  // Measure scrollability and track scroll position
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScroll(el.scrollHeight > el.clientHeight);
+    setAtTop(el.scrollTop <= 30);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    // Small delay so content has rendered
+    const t = window.setTimeout(checkScroll, 80);
+    const el = scrollRef.current;
+    el?.addEventListener('scroll', checkScroll, { passive: true });
+    const ro = new ResizeObserver(checkScroll);
+    if (el) ro.observe(el);
+    return () => {
+      window.clearTimeout(t);
+      el?.removeEventListener('scroll', checkScroll);
+      ro.disconnect();
+    };
+  }, [open, checkScroll]);
+
+  const handleIndicatorClick = () => {
+    scrollRef.current?.scrollBy({ top: 200, behavior: 'smooth' });
+  };
+
   return (
     <AnimatePresence>
       {project && (
@@ -104,7 +134,8 @@ export default function ProjectModal({
               <FiX size={18} />
             </button>
 
-            <div className="overflow-y-auto overscroll-contain pb-[env(safe-area-inset-bottom)]">
+            {/* Scrollable content */}
+            <div ref={scrollRef} className="overflow-y-auto overscroll-contain pb-[env(safe-area-inset-bottom)]">
               <div className="relative aspect-[2.8/1] w-full shrink-0 bg-zinc-950">
                 <ProjectCover project={project} priority sizes="(min-width: 640px) 950px, 100vw" />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
@@ -216,6 +247,39 @@ export default function ProjectModal({
                 )}
               </div>
             </div>
+
+            {/* Scroll indicator overlay */}
+            <AnimatePresence>
+              {canScroll && atTop && (
+                <motion.div
+                  key="scroll-indicator"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="pointer-events-none absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pb-4"
+                  aria-hidden="true"
+                >
+                  {/* Gradient fade — taller for more presence */}
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80" />
+                  {/* Chevron button with pill background */}
+                  <button
+                    type="button"
+                    onClick={handleIndicatorClick}
+                    aria-label="Scroll down for more content"
+                    className="pointer-events-auto relative z-10 flex cursor-pointer flex-col items-center gap-0.5 rounded-full border border-blue-200 bg-white/90 px-3 py-1.5 text-blue-500 opacity-90 shadow-md shadow-blue-100 backdrop-blur-sm transition-all hover:opacity-100 hover:shadow-blue-200 focus:outline-none dark:border-blue-500/30 dark:bg-zinc-900/90 dark:shadow-blue-950"
+                  >
+                    <motion.div
+                      animate={{ y: [0, 5, 0], opacity: [0.7, 1, 0.7] }}
+                      transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity }}
+                      className="motion-reduce:animate-none"
+                    >
+                      <FiChevronDown size={22} strokeWidth={2.5} />
+                    </motion.div>
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       )}
