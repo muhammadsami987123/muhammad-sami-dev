@@ -98,54 +98,54 @@ const getColorClasses = (color: string) => {
 
 export default function Services() {
     return (
-        <section className="py-20 lg:py-28 relative overflow-hidden bg-white/50 dark:bg-zinc-900/50">
+        <section className="py-20 lg:py-28 relative overflow-hidden bg-white dark:bg-zinc-950">
             {/* Background Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[20%] left-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold text-[10px] tracking-widest uppercase mb-6"
-                    >
-                        Capabilities
-                    </motion.div>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
-                    >
-                        Engineered <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Solutions.</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
-                    >
-                        Specialized services bridging the gap between sophisticated software architecture and autonomous intelligence.
-                    </motion.p>
-                </div>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold text-[10px] tracking-widest uppercase mb-6"
+                >
+                    Capabilities
+                </motion.div>
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-tight"
+                >
+                    Engineered <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Solutions.</span>
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed"
+                >
+                    Specialized services bridging the gap between sophisticated software architecture and autonomous intelligence.
+                </motion.p>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {services.map((service, index) => {
+            {/* Full-width Marquee Track */}
+            <div className="relative w-full overflow-hidden" role="region" aria-label="Engineered Solutions carousel">
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 sm:w-24" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-zinc-950 dark:via-zinc-950/80 sm:w-24" />
+
+                <div className="project-marquee-track flex w-max gap-5 py-4 px-6">
+                    {[...services, ...services].map((service, index) => {
                         const style = getColorClasses(service.color);
 
                         return (
                             <motion.div
-                                key={service.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className={`group relative p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
+                                key={`${service.title}-${index}`}
+                                className={`group relative w-[300px] sm:w-[340px] shrink-0 p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${style.border} ${style.glow}`}
                             >
                                 <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 shadow-sm group-hover:scale-110 group-hover:text-white transition-all duration-500 ${style.iconText} ${style.iconBg}`}>
                                     {service.icon}
