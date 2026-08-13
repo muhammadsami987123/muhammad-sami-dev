@@ -124,20 +124,20 @@ export default function Hero() {
             </p>
 
             {/* Actions */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
-              <Link href="#projects" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto h-12 lg:h-14 px-8 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl flex items-center justify-center gap-3">
-                  Explore Projects <FiArrowRight size={18} />
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-10">
+              <Link href="#projects" className="shrink-0">
+                <button className="h-12 lg:h-14 px-6 sm:px-8 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap text-sm">
+                  Explore Projects <FiArrowRight size={18} className="shrink-0" />
                 </button>
               </Link>
-              <div className="flex gap-3 w-full sm:w-auto">
-                <a href="https://muhammad-sami-resume.vercel.app/" target="_blank" className="flex-1 sm:flex-none">
-                  <button className="w-full h-12 lg:h-14 px-5 border-2 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 text-xs">
+              <div className="flex gap-2 sm:gap-3 shrink-0">
+                <a href="https://muhammad-sami-resume.vercel.app/" target="_blank" className="shrink-0">
+                  <button className="h-12 lg:h-14 px-4 sm:px-5 border-2 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 text-xs whitespace-nowrap">
                     <FiGlobe /> Web Resume
                   </button>
                 </a>
-                <a href="/new-resume.pdf" target="_blank" className="flex-1 sm:flex-none">
-                  <button className="w-full h-12 lg:h-14 px-5 border-2 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 text-xs">
+                <a href="/new-resume.pdf" target="_blank" className="shrink-0">
+                  <button className="h-12 lg:h-14 px-4 sm:px-5 border-2 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 font-bold rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 text-xs whitespace-nowrap">
                     <FiDownload /> Resume PDF
                   </button>
                 </a>

@@ -412,7 +412,7 @@ export default function About() {
   };
 
   return (
-    <Background className="py-12 sm:py-20 lg:py-32">
+    <Background className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

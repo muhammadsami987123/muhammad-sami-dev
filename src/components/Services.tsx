@@ -98,7 +98,7 @@ const getColorClasses = (color: string) => {
 
 export default function Services() {
     return (
-        <section className="py-14 sm:py-20 lg:py-28 relative overflow-hidden bg-white dark:bg-zinc-950">
+        <section className="pt-8 sm:pt-12 lg:pt-16 pb-14 sm:pb-20 lg:pb-28 relative overflow-hidden bg-white dark:bg-zinc-950">
             {/* Background Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
                 <div className="absolute top-[20%] right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
