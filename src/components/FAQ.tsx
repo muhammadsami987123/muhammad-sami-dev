@@ -87,53 +87,60 @@ export default function FAQ() {
                         </motion.a>
                     </div>
 
-                    {/* Right Column: Accordion */}
-                    <div className="lg:col-span-7">
-                        <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
-                            {faqs.map((faq, index) => (
+                    {/* Right Column: Accordion Cards */}
+                    <div className="lg:col-span-7 space-y-3 sm:space-y-4">
+                        {faqs.map((faq, index) => {
+                            const isOpen = openIndex === index;
+                            return (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="group"
+                                    transition={{ delay: index * 0.05 }}
+                                    className={`rounded-2xl border transition-all duration-300 ${
+                                        isOpen
+                                            ? 'border-blue-500/40 bg-blue-50/30 dark:bg-zinc-900/80 dark:border-blue-500/30 shadow-md shadow-blue-500/5'
+                                            : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:border-zinc-300 dark:hover:border-zinc-700'
+                                    }`}
                                 >
                                     <button
-                                        onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                        className="w-full py-6 flex items-start justify-between text-left focus:outline-none"
+                                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                                        className="w-full p-5 sm:p-6 flex items-center justify-between text-left focus:outline-none gap-4"
                                     >
-                                        <span className={`text-lg sm:text-xl font-semibold transition-colors duration-300 ${openIndex === index
-                                            ? 'text-blue-600 dark:text-blue-400'
-                                            : 'text-zinc-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400'
-                                            }`}>
+                                        <span className={`text-base sm:text-lg font-bold transition-colors duration-300 ${
+                                            isOpen
+                                                ? 'text-blue-600 dark:text-blue-400'
+                                                : 'text-zinc-900 dark:text-white'
+                                        }`}>
                                             {faq.question}
                                         </span>
-                                        <span className={`ml-6 flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 ${openIndex === index
-                                            ? 'border-blue-600 bg-blue-600 text-white rotate-0'
-                                            : 'border-zinc-200 dark:border-zinc-800 text-zinc-400 group-hover:border-blue-600 group-hover:text-blue-600'
-                                            }`}>
-                                            {openIndex === index ? <FiMinus size={14} /> : <FiPlus size={14} />}
+                                        <span className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-300 ${
+                                            isOpen
+                                                ? 'border-blue-600 bg-blue-600 text-white rotate-0'
+                                                : 'border-zinc-200 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-800'
+                                        }`}>
+                                            {isOpen ? <FiMinus size={14} /> : <FiPlus size={14} />}
                                         </span>
                                     </button>
                                     <AnimatePresence>
-                                        {openIndex === index && (
+                                        {isOpen && (
                                             <motion.div
                                                 initial={{ height: 0, opacity: 0 }}
                                                 animate={{ height: 'auto', opacity: 1 }}
                                                 exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                transition={{ duration: 0.25, ease: "easeInOut" }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="pb-6 sm:pb-8 pr-4 sm:pr-12 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+                                                <div className="px-5 sm:px-6 pb-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base border-t border-zinc-100 dark:border-zinc-800/60 pt-4">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
                                 </motion.div>
-                            ))}
-                        </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

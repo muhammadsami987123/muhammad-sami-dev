@@ -88,7 +88,7 @@ export default function Contact() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 bg-zinc-50 dark:bg-zinc-900/50 rounded-2xl border border-zinc-100 dark:border-zinc-800 transition-colors hover:border-blue-500/30">
+                <div key={index} className="flex items-center gap-4 sm:gap-6 p-5 sm:p-6 bg-white dark:bg-zinc-900/50 rounded-2xl border border-zinc-200 dark:border-zinc-800 transition-all hover:border-blue-500/50 shadow-sm">
                   <div className="text-xl sm:text-2xl text-blue-600 dark:text-blue-400">
                     {info.icon}
                   </div>
@@ -100,7 +100,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="hidden lg:block pt-10 border-t border-zinc-100 dark:border-zinc-800">
+            <div className="hidden lg:block pt-10 border-t border-zinc-200 dark:border-zinc-800">
               <p className="text-[10px] uppercase tracking-widest font-bold text-zinc-400 mb-6">Social Networks</p>
               <div className="flex gap-3">
                 {[
@@ -130,7 +130,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
-            <div className="bg-white dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-800 p-6 sm:p-8 lg:p-12 rounded-2xl shadow-xl shadow-zinc-900/5">
+            <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-8 lg:p-12 rounded-2xl shadow-xl shadow-zinc-900/5">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   <div className="space-y-2.5 sm:space-y-3">
@@ -142,7 +142,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
-                      className="w-full h-12 sm:h-14 px-5 sm:px-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-100 dark:border-zinc-700/50 focus:ring-2 focus:ring-blue-600 transition-all text-sm outline-none"
+                      className="w-full h-12 sm:h-14 px-5 sm:px-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all text-sm outline-none"
                     />
                   </div>
                   <div className="space-y-2.5 sm:space-y-3">
@@ -154,7 +154,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="name@company.com"
-                      className="w-full h-12 sm:h-14 px-5 sm:px-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-100 dark:border-zinc-700/50 focus:ring-2 focus:ring-blue-600 transition-all text-sm outline-none"
+                      className="w-full h-12 sm:h-14 px-5 sm:px-6 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all text-sm outline-none"
                     />
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Tell me about your project..."
-                    className="w-full px-5 sm:px-6 py-4 sm:py-5 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-100 dark:border-zinc-700/50 focus:ring-2 focus:ring-blue-600 transition-all text-sm resize-none outline-none"
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition-all text-sm resize-none outline-none"
                   ></textarea>
                 </div>
 
