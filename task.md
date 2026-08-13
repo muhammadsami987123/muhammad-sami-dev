@@ -1,459 +1,640 @@
-# Project Detail Modal: Add a Clear Animated Scroll Indicator
+# Portfolio UI Refinement: Startup Founder Section
 
-The current project detail modal works correctly, but there is one important UX problem.
+Review the current homepage implementation and the attached screenshots carefully.
 
-When a user opens a project, the modal contains more content below the visible viewport. However, there is **no obvious visual indication that the modal is scrollable**.
+The current **Startup Founder / Founded Startups** section has good visual direction, but the cards are far too large and consume too much vertical space.
 
-A user may not realize that they need to scroll inside the modal to see:
+I want to refine this section without damaging the existing overall portfolio design.
 
-* Overview
-* Features
-* Technology stack
-* Project details
-* Live Demo
-* GitHub / Source
+The goal is:
 
-The uploaded screenshot shows the current modal. Keep the existing design, but add a subtle, elegant visual cue that clearly communicates:
+**smaller cards + better information density + cleaner UI + better hierarchy + move the section lower on the homepage.**
 
-> "There is more content below. Scroll down."
+Do NOT redesign the entire portfolio.
 
 ---
 
-## 1. ADD AN ANIMATED SCROLL INDICATOR
+# 1. MOVE STARTUP SECTION LOWER ON THE HOMEPAGE
 
-Place a small animated scroll indicator at the **bottom-center of the modal's content area**.
+This is an important structural change.
 
-It should look like a minimal downward arrow.
+The current Startup Founder / Founded Startups section appears too early on the homepage.
 
-Example concept:
+I do NOT want visitors to immediately see that I am a startup founder before they have seen my engineering capabilities.
+
+The homepage should first communicate my:
+
+* Engineering work
+* Projects
+* Skills
+* Technical capabilities
+
+Then introduce my startup/founder work later.
+
+### Move the Startup section to:
+
+**AFTER the Skills section**
+
+The intended homepage order should approximately be:
 
 ```text
-              ↓
-           scroll
+Hero
+↓
+About
+↓
+Featured Projects
+↓
+Skills
+↓
+Founded Startups / Startup Founder
+↓
+Contact
 ```
 
-But keep the actual UI much cleaner.
+If there are existing sections between these, preserve the existing logical structure, but make sure **Startup Founder comes after Skills**.
 
-Prefer:
-
-```text
-        ↓
-```
-
-or a small double-chevron:
-
-```text
-        ˅
-```
-
-with a subtle animation.
+Do not place Startup Founder near the top of the homepage.
 
 ---
 
-## 2. POSITION
+# 2. KEEP THE SECTION TITLE SIMPLE
 
-The indicator must be:
+The current section title:
 
-**Bottom-center of the modal**
+> Founded Startups.
 
-Not at the bottom of the browser window.
+is actually good.
 
-Not outside the modal.
+Keep it simple.
 
-Not inside the project image.
+Do not replace it with an overly promotional title.
 
-It should visually sit over/near the bottom edge of the scrollable content area.
+Use:
+
+## Founded Startups
+
+Supporting text:
+
+> Building products and companies around AI, software, and digital platforms.
+
+Keep the description short.
+
+Do not use phrases like:
+
+* Entrepreneurial ecosystem
+* Visionary leadership
+* Transforming industries
+* Innovation-driven ventures
+* Founder excellence
+
+The portfolio should remain professional and understated.
+
+---
+
+# 3. REMOVE THE OVERSIZED INTRO AREA
+
+The current Startup section has too much empty space before the cards.
+
+Reduce:
+
+* top padding
+* heading margin
+* description margin
+* gap between description and cards
+
+The section should get to the actual startup cards quickly.
+
+Target:
+
+```text
+Founded Startups
+
+Building products and companies around AI,
+software, and digital platforms.
+
+┌───────────────┐  ┌───────────────┐
+│ Startup       │  │ Startup       │
+│ Card          │  │ Card          │
+└───────────────┘  └───────────────┘
+```
+
+---
+
+# 4. MAKE STARTUP CARDS MUCH SMALLER
+
+This is the biggest visual issue.
+
+The current cards are too large vertically.
+
+They currently feel like large case-study panels.
+
+They should instead feel like **compact professional company cards**.
+
+Target desktop card height:
+
+### Approximately 300–380px
+
+Do not make them 500–600px+ tall.
+
+The user should be able to see the **entire startup card in one viewport** or almost one viewport.
+
+---
+
+# 5. DESKTOP LAYOUT
+
+Keep two startup cards per row.
 
 Example:
 
 ```text
-┌───────────────────────────────┐
-│                               │
-│       PROJECT IMAGE           │
-│                               │
-├───────────────────────────────┤
-│                               │
-│  Project Title                │
-│                               │
-│  Description                  │
-│                               │
-│  Overview                     │
-│  More content below...        │
-│                               │
-│              ↓                │
-└───────────────────────────────┘
+┌──────────────────────────┐   ┌──────────────────────────┐
+│ Logo                 Date│   │ Logo                 Date│
+│                          │   │                          │
+│ Marsa Empower            │   │ CodePulse Innovations    │
+│ FOUNDER + COO            │   │ FOUNDER                  │
+│                          │   │                          │
+│ Short description...     │   │ Short description...     │
+│                          │   │                          │
+│ Website / Role           │   │ Website / Product       │
+└──────────────────────────┘   └──────────────────────────┘
 ```
 
-The indicator should make it immediately obvious that more content exists below.
+The cards should remain visually balanced.
 
 ---
 
-## 3. ANIMATION
+# 6. REDUCE CARD PADDING
 
-The arrow should have a very subtle continuous animation.
+Current card padding is excessive.
 
-Recommended behavior:
-
-```text
-opacity: 0.5 → 1 → 0.5
-
-translateY:
-0px → 5px → 0px
-```
-
-Loop continuously.
-
-The animation should feel like:
-
-**"Scroll down"**
-
-not like a notification or attention-grabbing advertisement.
-
-Keep it slow and smooth.
-
-Suggested duration:
+Use approximately:
 
 ```text
-1.4s – 1.8s
+24px–28px
 ```
 
-with:
+instead of very large internal spacing.
 
-```text
-ease-in-out
-infinite
-```
+The information should feel compact but not cramped.
 
 ---
 
-## 4. USE A CHEVRON / ARROW
+# 7. REDUCE LOGO AREA
 
-Use a clean icon from the icon library already used by the project.
+The startup logo currently has too much visual space.
+
+Use a compact logo container:
+
+```text
+48px × 48px
+```
+
+or approximately:
+
+```text
+52px × 52px
+```
+
+Do not use a huge logo block.
+
+Keep the logo clean and recognizable.
+
+---
+
+# 8. DATE BADGE
+
+Keep the date badge because it provides useful context.
 
 For example:
 
 ```text
-ChevronDown
+JAN 2026 — PRESENT
 ```
 
-or an equivalent existing icon.
+But make it smaller and more subtle.
 
-Do NOT introduce a new icon library just for this.
-
-The icon should be approximately:
+Use approximately:
 
 ```text
-16px – 20px
+11px–12px
 ```
 
-Do not make it large.
+with moderate letter spacing.
+
+It should not compete with the company name.
 
 ---
 
-## 5. ADD A SUBTLE BACKDROP / GRADIENT
+# 9. COMPANY NAME
 
-Because the modal content may pass behind the indicator, add a very subtle bottom fade.
+The company name should be the primary content.
+
+Example:
+
+## Marsa Empower
+
+and:
+
+## CodePulse Innovations
+
+Use approximately:
+
+```text
+24px–28px
+```
+
+desktop.
+
+Do not use huge 36–40px typography.
+
+---
+
+# 10. ROLE
+
+Keep the role directly below the company name.
+
+Example:
+
+```text
+FOUNDER + CHIEF OPERATING OFFICER
+```
+
+or the appropriate role from the existing data.
+
+Make this a compact accent label.
+
+Approximately:
+
+```text
+11px–12px
+```
+
+with medium letter spacing.
+
+---
+
+# 11. DESCRIPTION MUST BE SHORT
+
+The current startup descriptions are too long.
+
+Shorten them to approximately:
+
+**2–3 lines maximum.**
+
+Example:
+
+### Marsa Empower
+
+> Women-first AI health platform focused on accessible digital health, safety, and personalized care.
+
+### CodePulse Innovations
+
+> Product studio focused on AI-powered portfolio generation and digital presence workflows.
+
+Use the actual existing project/company data where available.
+
+Do not invent achievements or company details.
+
+---
+
+# 12. REMOVE UNNECESSARY CONTENT FROM CARDS
+
+Do not put large paragraphs inside startup cards.
+
+The card should answer only:
+
+1. What company is this?
+2. What was my role?
+3. When?
+4. What does it do?
+5. Where can I learn more?
+
+Everything else is unnecessary.
+
+---
+
+# 13. COMPACT CARD STRUCTURE
+
+Use this structure:
+
+```text
+┌─────────────────────────────────────────┐
+│ [Logo]                     JAN 2026–NOW │
+│                                         │
+│ Marsa Empower                           │
+│ FOUNDER + CHIEF OPERATING OFFICER       │
+│                                         │
+│ Women-first AI health platform...       │
+│                                         │
+│ ─────────────────────────────────────   │
+│ Website →                               │
+└─────────────────────────────────────────┘
+```
+
+This is enough.
+
+---
+
+# 14. ADD A SUBTLE CARD FOOTER
+
+Instead of large buttons, use a compact text link.
 
 For example:
 
 ```text
-transparent
-        ↓
-rgba(background, 0.95)
-```
-
-This creates a small visual fade at the bottom of the scrollable area.
-
-The purpose is to communicate:
-
-**content continues below**
-
-without visually blocking the content.
-
-Keep the gradient very subtle.
-
----
-
-## 6. IMPORTANT: INDICATOR SHOULD ONLY APPEAR WHEN SCROLLING IS POSSIBLE
-
-Do not show the indicator if the modal content fits entirely inside the viewport.
-
-Logic should be:
-
-```text
-if scrollHeight > clientHeight:
-    show scroll indicator
-else:
-    hide indicator
-```
-
-This is important.
-
-The indicator should only exist when there is actually more content below.
-
----
-
-## 7. HIDE IT WHEN THE USER SCROLLS DOWN
-
-Once the user starts scrolling, gradually hide the indicator.
-
-Example behavior:
-
-### Modal opens
-
-```text
-           ↓
-        animated
-```
-
-### User scrolls
-
-```text
-indicator fades out
-```
-
-### User returns to the top
-
-```text
-indicator fades back in
-```
-
-You can use a small threshold such as:
-
-```text
-scrollTop < 30px
-```
-
-to determine whether the user is still near the top.
-
----
-
-## 8. SHOW IT AGAIN WHEN USER RETURNS TO TOP
-
-If:
-
-```text
-scrollTop <= 30
-```
-
-show the animated indicator again.
-
-If:
-
-```text
-scrollTop > 30
-```
-
-hide it.
-
-This creates a natural UX cue without permanently occupying the interface.
-
----
-
-## 9. DO NOT ADD TEXT
-
-Do not add:
-
-```text
-Scroll down to see more
+Visit Website →
 ```
 
 or:
 
 ```text
-More details below
+View Company →
 ```
 
-The animation should communicate this visually.
+Keep it subtle.
 
-Keep the UI minimal.
+Do not use giant black CTA buttons.
+
+The startup section is informational, not a sales page.
 
 ---
 
-## 10. OPTIONAL HOVER / INTERACTION
+# 15. CARD VISUAL STYLE
 
-If appropriate, make the indicator slightly interactive.
+Keep the existing premium visual language:
 
-When hovered:
+* white background
+* subtle border
+* rounded corners
+* very light shadow
+* thin top accent line
+* subtle hover effect
+
+But reduce visual intensity.
+
+The cards should feel like part of the portfolio rather than separate landing pages.
+
+---
+
+# 16. HOVER EFFECT
+
+Use a subtle hover state.
+
+For example:
 
 ```text
-opacity: 1
+translateY(-3px)
 ```
 
-The cursor can indicate that it is interactive.
-
-Clicking it can smoothly scroll the modal down by approximately:
-
-```text
-150–250px
-```
-
-This is optional but recommended.
-
-If implemented, use smooth scrolling.
-
----
-
-## 11. MODAL SCROLLING MUST REMAIN INSIDE THE MODAL
-
-Make sure the user is scrolling the **modal content**, not the page behind it.
-
-The modal should continue using something similar to:
-
-```css
-max-height: 85vh;
-overflow-y: auto;
-```
-
-The body/background should remain locked while the modal is open.
-
-Do not change this behavior just to implement the indicator.
-
----
-
-## 12. VISUAL STYLE
-
-The indicator must match the existing portfolio.
-
-Use:
-
-* subtle blue accent
-* thin stroke
-* small size
-* soft opacity
-* smooth animation
-* minimal visual weight
+with a very light shadow/border transition.
 
 Do NOT use:
 
-* bright glowing arrows
-* large animated icons
-* bouncing emojis
-* oversized scroll graphics
-* distracting text
-* flashy animations
+* large scaling
+* aggressive glow
+* rotating cards
+* excessive gradients
 
-It should look like a deliberate part of the UI.
+Keep it professional.
 
 ---
 
-## 13. DESKTOP
+# 17. RESPONSIVE DESIGN
 
-Desktop placement:
+### Desktop
+
+2 cards per row.
+
+### Tablet
+
+2 cards per row if there is enough width.
+
+Otherwise:
+
+1 card per row.
+
+### Mobile
+
+1 card per row.
+
+Mobile cards should be even more compact.
+
+Target:
 
 ```text
-             ↓
-        bottom-center
+┌──────────────────────────┐
+│ Logo              Date   │
+│                          │
+│ Marsa Empower            │
+│ Founder + COO            │
+│                          │
+│ Short description...     │
+│                          │
+│ Visit Website →          │
+└──────────────────────────┘
 ```
 
-Keep approximately:
+Do not create excessively tall mobile cards.
+
+---
+
+# 18. SECTION HEIGHT
+
+The entire Startup section should become significantly shorter.
+
+The user should be able to scroll through it quickly.
+
+Do not let two startup cards consume an enormous amount of vertical space.
+
+The section should feel approximately:
+
+**40–50% more compact than the current implementation.**
+
+---
+
+# 19. HOMEPAGE HIERARCHY
+
+This is extremely important.
+
+The Startup section should NOT visually compete with:
+
+* Hero
+* Featured Projects
+* Skills
+
+Those are the primary portfolio sections.
+
+Startup Founder should feel like an additional dimension of my professional profile.
+
+The hierarchy should be:
 
 ```text
-bottom: 12px–18px
+Technical Engineering
+        ↓
+Projects
+        ↓
+Skills
+        ↓
+Startup / Founder Experience
 ```
 
-inside the scrollable modal area.
+This allows visitors to first understand that I am a strong engineer before discovering my founder/operator work.
 
 ---
 
-## 14. MOBILE
+# 20. DO NOT REMOVE STARTUP INFORMATION
 
-On mobile, make the indicator slightly smaller and keep it centered.
+Do not remove the startup companies.
 
-It must not overlap:
+Keep all existing startup data.
 
-* important text
-* buttons
-* Live Demo
-* GitHub
-* close button
+Only change:
 
-If the modal becomes a near-full-screen mobile sheet, position it relative to the modal's scroll container.
-
----
-
-## 15. ACCESSIBILITY
-
-Respect:
-
-```text
-prefers-reduced-motion
-```
-
-When reduced motion is enabled:
-
-* remove the continuous animation
-* keep the static downward chevron visible when scrolling is possible
-
-Do not make the UX dependent on animation alone.
-
-Also ensure sufficient contrast.
-
----
-
-## 16. DO NOT REDESIGN THE MODAL
-
-This is important.
-
-Do NOT rebuild the modal.
-
-Do NOT change:
-
-* modal dimensions
-* project image
+* position on homepage
+* card size
+* spacing
 * typography
-* project content
-* badges
-* buttons
-* colors
-* overall layout
-
-The only purpose of this change is to make the modal's scrollability obvious.
+* content density
+* interaction
+* responsiveness
 
 ---
 
-# FINAL UX
+# 21. KEEP THE CURRENT NAVIGATION
 
-When the user opens a project, the experience should be:
+Do not change the navbar.
 
-```text
-┌─────────────────────────────────────┐
-│                              ×      │
-│                                     │
-│          PROJECT IMAGE              │
-│                                     │
-├─────────────────────────────────────┤
-│                                     │
-│  V2C — Voice to Code                │
-│                                     │
-│  Description...                     │
-│                                     │
-│  OVERVIEW                           │
-│                                     │
-│  Content continues below...         │
-│                                     │
-│                 ↓                   │
-└─────────────────────────────────────┘
-```
-
-The animated chevron should immediately communicate:
-
-**"There is more content below. Scroll."**
-
-After the user scrolls:
+Keep:
 
 ```text
-↓
-fades out
+About
+Startups
+Projects
+Skills
+Contact
+GitHub
 ```
 
-When the user returns to the top:
+The Startups navigation item can still scroll/navigate to the Startup section.
+
+If the section is moved lower, make sure the navigation anchor still works correctly.
+
+---
+
+# 22. UPDATE ANCHOR / SCROLL BEHAVIOR
+
+Because the section is moving lower, verify that:
 
 ```text
-↓
-fades back in
+#startups
 ```
 
-Implement this cleanly with the existing animation system and existing icon library.
+or the existing startup section ID still works.
 
-Keep the interaction subtle, premium, and production-ready.
+Clicking **Startups** in the navbar should smoothly navigate to the new position.
+
+Account for the sticky navbar so the heading does not get hidden underneath it.
+
+---
+
+# 23. IMPORTANT: DO NOT CHANGE THE REST OF THE HOMEPAGE
+
+Do not redesign:
+
+* Hero
+* About
+* Featured Projects
+* Skills
+* Contact
+* Navbar
+
+unless a tiny spacing adjustment is required because the Startup section is being moved.
+
+The task is specifically about:
+
+### Startup section positioning + card refinement.
+
+---
+
+# 24. FINAL VISUAL TARGET
+
+The section should ultimately feel like:
+
+```text
+────────────────────────────────────────
+
+Founded Startups
+
+Building products and companies around AI,
+software, and digital platforms.
+
+┌──────────────────────────┐
+│ ◉                    DATE│
+│                          │
+│ Marsa Empower            │
+│ FOUNDER + COO            │
+│                          │
+│ Women-first AI health    │
+│ platform focused on...   │
+│                          │
+│ Visit Website →          │
+└──────────────────────────┘
+
+┌──────────────────────────┐
+│ ◉                    DATE│
+│                          │
+│ CodePulse Innovations    │
+│ FOUNDER                  │
+│                          │
+│ AI-powered portfolio and │
+│ digital presence tools.  │
+│                          │
+│ Visit Website →          │
+└──────────────────────────┘
+
+────────────────────────────────────────
+```
+
+Compact.
+
+Readable.
+
+Professional.
+
+No oversized cards.
+
+No unnecessary empty space.
+
+No giant paragraphs.
+
+---
+
+# 25. FINAL DESIGN PRINCIPLE
+
+The current section is not bad because it lacks visual design.
+
+It is bad because **there is too much visual space around too little information**.
+
+Fix the information density.
+
+Make it:
+
+**Smaller**
+**Cleaner**
+**More scannable**
+**More compact**
+**More professional**
+
+And most importantly:
+
+### Move "Founded Startups" below the Skills section on the homepage.
+
+The visitor should first see:
+
+**Engineer → Projects → Skills**
+
+and then:
+
+**Founder / Startup Experience**
+
+That hierarchy is intentional and should be preserved.
