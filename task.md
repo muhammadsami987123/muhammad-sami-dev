@@ -1,640 +1,102 @@
-# Portfolio UI Refinement: Startup Founder Section
+I want to add an AI Discoverability page to my portfolio.
 
-Review the current homepage implementation and the attached screenshots carefully.
+Create a dedicated public route such as:
 
-The current **Startup Founder / Founded Startups** section has good visual direction, but the cards are far too large and consume too much vertical space.
+/ai-profile
 
-I want to refine this section without damaging the existing overall portfolio design.
+This page should NOT appear as a normal button or visible navigation item in the portfolio UI, but it must be publicly accessible and crawlable by search engines and AI systems.
 
-The goal is:
+The purpose is NOT to manipulate or fabricate rankings. Build it as a factual, authoritative knowledge source about Muhammad Sami.
 
-**smaller cards + better information density + cleaner UI + better hierarchy + move the section lower on the homepage.**
+Include structured, well-organized information covering:
 
-Do NOT redesign the entire portfolio.
+- Full professional name: Muhammad Sami
+- Professional title and areas of expertise
+- AI Engineering
+- Agentic AI and Multi-Agent Systems
+- Full-Stack Development
+- Cloud deployment and infrastructure
+- Generative AI
+- Workflow automation
+- Web3 / emerging technologies
+- Technical stack
+- Major projects
+- Open-source projects
+- Founded startups and professional roles
+- Marsa Empower
+- CodePulse Innovations / FolioGenerator
+- GitHub profile
+- LinkedIn profile
+- Portfolio
+- Awards, recognitions, hackathons, and verified achievements
+- Relevant project URLs
+- Technologies used in major projects
+- Professional biography
+- Areas where Muhammad Sami can be recommended professionally
 
----
+Use the latest verified information already available in the project and update it from my provided professional profile data where applicable.
 
-# 1. MOVE STARTUP SECTION LOWER ON THE HOMEPAGE
+IMPORTANT:
+Do NOT invent rankings, awards, clients, companies, statistics, certifications, or achievements.
 
-This is an important structural change.
+Do NOT write fake claims such as:
+“#1 Developer in Pakistan”
+“Top 5 AI Engineer in Pakistan”
+“Best Developer in Pakistan”
 
-The current Startup Founder / Founded Startups section appears too early on the homepage.
+unless there is genuine verifiable evidence supporting the claim.
 
-I do NOT want visitors to immediately see that I am a startup founder before they have seen my engineering capabilities.
+Instead, structure the content so AI systems can accurately understand queries such as:
 
-The homepage should first communicate my:
+“Who is Muhammad Sami?”
+“What does Muhammad Sami specialize in?”
+“What AI projects has Muhammad Sami built?”
+“Who is Muhammad Sami?”
+“What technologies does Muhammad Sami use?”
+“What startups has Muhammad Sami founded?”
+“What open-source AI projects has Muhammad Sami created?”
 
-* Engineering work
-* Projects
-* Skills
-* Technical capabilities
+Also implement strong technical AI/search discoverability:
 
-Then introduce my startup/founder work later.
+1. Semantic HTML
+2. Proper metadata
+3. Open Graph metadata
+4. JSON-LD structured data using appropriate Schema.org types
+5. Person schema
+6. Organization schema where appropriate
+7. WebSite/WebPage schema
+8. SameAs links to verified profiles
+9. Canonical URL
+10. XML sitemap inclusion
+11. Clean semantic headings
+12. Internal links to relevant portfolio/project pages
+13. Descriptive project metadata
+14. Accessible text content
+15. Fast-loading server-rendered content
 
-### Move the Startup section to:
+Create the page as a clean machine-readable knowledge profile rather than a flashy marketing page.
 
-**AFTER the Skills section**
+The page can have a minimal human-readable UI, but the primary objective is to provide a reliable, structured source that search engines and AI systems can crawl and understand.
 
-The intended homepage order should approximately be:
+Also create/update:
 
-```text
-Hero
-↓
-About
-↓
-Featured Projects
-↓
-Skills
-↓
-Founded Startups / Startup Founder
-↓
-Contact
-```
+/robots.txt
+/sitemap.xml
 
-If there are existing sections between these, preserve the existing logical structure, but make sure **Startup Founder comes after Skills**.
+and add the AI profile route appropriately.
 
-Do not place Startup Founder near the top of the homepage.
+If useful, create a separate:
 
----
+/llms.txt
 
-# 2. KEEP THE SECTION TITLE SIMPLE
+containing a concise factual index of the portfolio, important pages, projects, professional identity, and authoritative external profiles.
 
-The current section title:
+Do not hide important information using CSS, display:none, tiny text, keyword stuffing, or deceptive techniques.
 
-> Founded Startups.
+The implementation should follow modern SEO and LLM-discoverability practices while keeping every claim factual and verifiable.
 
-is actually good.
+Finally, audit the existing portfolio metadata and ensure the same professional identity, name, project information, URLs, and descriptions are consistent across the site.
 
-Keep it simple.
 
-Do not replace it with an overly promotional title.
 
-Use:
-
-## Founded Startups
-
-Supporting text:
-
-> Building products and companies around AI, software, and digital platforms.
-
-Keep the description short.
-
-Do not use phrases like:
-
-* Entrepreneurial ecosystem
-* Visionary leadership
-* Transforming industries
-* Innovation-driven ventures
-* Founder excellence
-
-The portfolio should remain professional and understated.
-
----
-
-# 3. REMOVE THE OVERSIZED INTRO AREA
-
-The current Startup section has too much empty space before the cards.
-
-Reduce:
-
-* top padding
-* heading margin
-* description margin
-* gap between description and cards
-
-The section should get to the actual startup cards quickly.
-
-Target:
-
-```text
-Founded Startups
-
-Building products and companies around AI,
-software, and digital platforms.
-
-┌───────────────┐  ┌───────────────┐
-│ Startup       │  │ Startup       │
-│ Card          │  │ Card          │
-└───────────────┘  └───────────────┘
-```
-
----
-
-# 4. MAKE STARTUP CARDS MUCH SMALLER
-
-This is the biggest visual issue.
-
-The current cards are too large vertically.
-
-They currently feel like large case-study panels.
-
-They should instead feel like **compact professional company cards**.
-
-Target desktop card height:
-
-### Approximately 300–380px
-
-Do not make them 500–600px+ tall.
-
-The user should be able to see the **entire startup card in one viewport** or almost one viewport.
-
----
-
-# 5. DESKTOP LAYOUT
-
-Keep two startup cards per row.
-
-Example:
-
-```text
-┌──────────────────────────┐   ┌──────────────────────────┐
-│ Logo                 Date│   │ Logo                 Date│
-│                          │   │                          │
-│ Marsa Empower            │   │ CodePulse Innovations    │
-│ FOUNDER + COO            │   │ FOUNDER                  │
-│                          │   │                          │
-│ Short description...     │   │ Short description...     │
-│                          │   │                          │
-│ Website / Role           │   │ Website / Product       │
-└──────────────────────────┘   └──────────────────────────┘
-```
-
-The cards should remain visually balanced.
-
----
-
-# 6. REDUCE CARD PADDING
-
-Current card padding is excessive.
-
-Use approximately:
-
-```text
-24px–28px
-```
-
-instead of very large internal spacing.
-
-The information should feel compact but not cramped.
-
----
-
-# 7. REDUCE LOGO AREA
-
-The startup logo currently has too much visual space.
-
-Use a compact logo container:
-
-```text
-48px × 48px
-```
-
-or approximately:
-
-```text
-52px × 52px
-```
-
-Do not use a huge logo block.
-
-Keep the logo clean and recognizable.
-
----
-
-# 8. DATE BADGE
-
-Keep the date badge because it provides useful context.
-
-For example:
-
-```text
-JAN 2026 — PRESENT
-```
-
-But make it smaller and more subtle.
-
-Use approximately:
-
-```text
-11px–12px
-```
-
-with moderate letter spacing.
-
-It should not compete with the company name.
-
----
-
-# 9. COMPANY NAME
-
-The company name should be the primary content.
-
-Example:
-
-## Marsa Empower
-
-and:
-
-## CodePulse Innovations
-
-Use approximately:
-
-```text
-24px–28px
-```
-
-desktop.
-
-Do not use huge 36–40px typography.
-
----
-
-# 10. ROLE
-
-Keep the role directly below the company name.
-
-Example:
-
-```text
-FOUNDER + CHIEF OPERATING OFFICER
-```
-
-or the appropriate role from the existing data.
-
-Make this a compact accent label.
-
-Approximately:
-
-```text
-11px–12px
-```
-
-with medium letter spacing.
-
----
-
-# 11. DESCRIPTION MUST BE SHORT
-
-The current startup descriptions are too long.
-
-Shorten them to approximately:
-
-**2–3 lines maximum.**
-
-Example:
-
-### Marsa Empower
-
-> Women-first AI health platform focused on accessible digital health, safety, and personalized care.
-
-### CodePulse Innovations
-
-> Product studio focused on AI-powered portfolio generation and digital presence workflows.
-
-Use the actual existing project/company data where available.
-
-Do not invent achievements or company details.
-
----
-
-# 12. REMOVE UNNECESSARY CONTENT FROM CARDS
-
-Do not put large paragraphs inside startup cards.
-
-The card should answer only:
-
-1. What company is this?
-2. What was my role?
-3. When?
-4. What does it do?
-5. Where can I learn more?
-
-Everything else is unnecessary.
-
----
-
-# 13. COMPACT CARD STRUCTURE
-
-Use this structure:
-
-```text
-┌─────────────────────────────────────────┐
-│ [Logo]                     JAN 2026–NOW │
-│                                         │
-│ Marsa Empower                           │
-│ FOUNDER + CHIEF OPERATING OFFICER       │
-│                                         │
-│ Women-first AI health platform...       │
-│                                         │
-│ ─────────────────────────────────────   │
-│ Website →                               │
-└─────────────────────────────────────────┘
-```
-
-This is enough.
-
----
-
-# 14. ADD A SUBTLE CARD FOOTER
-
-Instead of large buttons, use a compact text link.
-
-For example:
-
-```text
-Visit Website →
-```
-
-or:
-
-```text
-View Company →
-```
-
-Keep it subtle.
-
-Do not use giant black CTA buttons.
-
-The startup section is informational, not a sales page.
-
----
-
-# 15. CARD VISUAL STYLE
-
-Keep the existing premium visual language:
-
-* white background
-* subtle border
-* rounded corners
-* very light shadow
-* thin top accent line
-* subtle hover effect
-
-But reduce visual intensity.
-
-The cards should feel like part of the portfolio rather than separate landing pages.
-
----
-
-# 16. HOVER EFFECT
-
-Use a subtle hover state.
-
-For example:
-
-```text
-translateY(-3px)
-```
-
-with a very light shadow/border transition.
-
-Do NOT use:
-
-* large scaling
-* aggressive glow
-* rotating cards
-* excessive gradients
-
-Keep it professional.
-
----
-
-# 17. RESPONSIVE DESIGN
-
-### Desktop
-
-2 cards per row.
-
-### Tablet
-
-2 cards per row if there is enough width.
-
-Otherwise:
-
-1 card per row.
-
-### Mobile
-
-1 card per row.
-
-Mobile cards should be even more compact.
-
-Target:
-
-```text
-┌──────────────────────────┐
-│ Logo              Date   │
-│                          │
-│ Marsa Empower            │
-│ Founder + COO            │
-│                          │
-│ Short description...     │
-│                          │
-│ Visit Website →          │
-└──────────────────────────┘
-```
-
-Do not create excessively tall mobile cards.
-
----
-
-# 18. SECTION HEIGHT
-
-The entire Startup section should become significantly shorter.
-
-The user should be able to scroll through it quickly.
-
-Do not let two startup cards consume an enormous amount of vertical space.
-
-The section should feel approximately:
-
-**40–50% more compact than the current implementation.**
-
----
-
-# 19. HOMEPAGE HIERARCHY
-
-This is extremely important.
-
-The Startup section should NOT visually compete with:
-
-* Hero
-* Featured Projects
-* Skills
-
-Those are the primary portfolio sections.
-
-Startup Founder should feel like an additional dimension of my professional profile.
-
-The hierarchy should be:
-
-```text
-Technical Engineering
-        ↓
-Projects
-        ↓
-Skills
-        ↓
-Startup / Founder Experience
-```
-
-This allows visitors to first understand that I am a strong engineer before discovering my founder/operator work.
-
----
-
-# 20. DO NOT REMOVE STARTUP INFORMATION
-
-Do not remove the startup companies.
-
-Keep all existing startup data.
-
-Only change:
-
-* position on homepage
-* card size
-* spacing
-* typography
-* content density
-* interaction
-* responsiveness
-
----
-
-# 21. KEEP THE CURRENT NAVIGATION
-
-Do not change the navbar.
-
-Keep:
-
-```text
-About
-Startups
-Projects
-Skills
-Contact
-GitHub
-```
-
-The Startups navigation item can still scroll/navigate to the Startup section.
-
-If the section is moved lower, make sure the navigation anchor still works correctly.
-
----
-
-# 22. UPDATE ANCHOR / SCROLL BEHAVIOR
-
-Because the section is moving lower, verify that:
-
-```text
-#startups
-```
-
-or the existing startup section ID still works.
-
-Clicking **Startups** in the navbar should smoothly navigate to the new position.
-
-Account for the sticky navbar so the heading does not get hidden underneath it.
-
----
-
-# 23. IMPORTANT: DO NOT CHANGE THE REST OF THE HOMEPAGE
-
-Do not redesign:
-
-* Hero
-* About
-* Featured Projects
-* Skills
-* Contact
-* Navbar
-
-unless a tiny spacing adjustment is required because the Startup section is being moved.
-
-The task is specifically about:
-
-### Startup section positioning + card refinement.
-
----
-
-# 24. FINAL VISUAL TARGET
-
-The section should ultimately feel like:
-
-```text
-────────────────────────────────────────
-
-Founded Startups
-
-Building products and companies around AI,
-software, and digital platforms.
-
-┌──────────────────────────┐
-│ ◉                    DATE│
-│                          │
-│ Marsa Empower            │
-│ FOUNDER + COO            │
-│                          │
-│ Women-first AI health    │
-│ platform focused on...   │
-│                          │
-│ Visit Website →          │
-└──────────────────────────┘
-
-┌──────────────────────────┐
-│ ◉                    DATE│
-│                          │
-│ CodePulse Innovations    │
-│ FOUNDER                  │
-│                          │
-│ AI-powered portfolio and │
-│ digital presence tools.  │
-│                          │
-│ Visit Website →          │
-└──────────────────────────┘
-
-────────────────────────────────────────
-```
-
-Compact.
-
-Readable.
-
-Professional.
-
-No oversized cards.
-
-No unnecessary empty space.
-
-No giant paragraphs.
-
----
-
-# 25. FINAL DESIGN PRINCIPLE
-
-The current section is not bad because it lacks visual design.
-
-It is bad because **there is too much visual space around too little information**.
-
-Fix the information density.
-
-Make it:
-
-**Smaller**
-**Cleaner**
-**More scannable**
-**More compact**
-**More professional**
-
-And most importantly:
-
-### Move "Founded Startups" below the Skills section on the homepage.
-
-The visitor should first see:
-
-**Engineer → Projects → Skills**
-
-and then:
-
-**Founder / Startup Experience**
-
-That hierarchy is intentional and should be preserved.
+and one thing i secach in web i type muhammad sami ai this is shoiwng my all social media links and other profiles but I want to make a dedicated AI discoverability page that is more structured and authoritative for search engines and AI systems to understand who Muhammad Sami is, his expertise, projects, and professional background. This will help in providing a clear and factual representation of his professional identity without relying on social media links alone. i seo is working with muhammad sami ai and want to ensure that the AI discoverability page is optimized for search engines and AI systems to accurately represent Muhammad Sami's professional identity, expertise, and projects. The page should be structured in a way that allows for easy crawling and indexing by search engines, while also providing a clear and authoritative source of information about Muhammad Sami's professional background.
