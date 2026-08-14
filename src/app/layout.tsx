@@ -96,13 +96,22 @@ export default function RootLayout({
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    // Stable @id so the ProfilePage at /ai-profile resolves to this same entity.
+    '@id': `${siteUrl}/#person`,
     name: 'Muhammad Sami',
     alternateName: 'Muhammad Sami Asghar Mughal',
     jobTitle: 'Forward Deployed Engineer, AI Agent Engineer, Full-Stack Developer, Founder',
     description: siteDescription,
     url: siteUrl,
+    mainEntityOfPage: `${siteUrl}/ai-profile`,
     image: `${siteUrl}/new-profile.png`,
-    email: 'm.samiwaseem1234@gmail.com',
+    email: 'mailto:m.samiwaseem1234@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Karachi',
+      addressRegion: 'Sindh',
+      addressCountry: 'Pakistan',
+    },
     sameAs: [
       'https://github.com/muhammadsami987123',
       'https://www.linkedin.com/in/muhammad-sami-3aa6102b8/',
@@ -148,13 +157,13 @@ export default function RootLayout({
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${siteUrl}/#website`,
     name: 'Muhammad Sami Portfolio',
     url: siteUrl,
     description: siteDescription,
-    author: {
-      '@type': 'Person',
-      name: 'Muhammad Sami',
-    },
+    inLanguage: 'en',
+    author: { '@id': `${siteUrl}/#person` },
+    publisher: { '@id': `${siteUrl}/#person` },
   };
 
   return (

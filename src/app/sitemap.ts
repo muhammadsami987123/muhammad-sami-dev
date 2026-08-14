@@ -15,6 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
+            // Structured knowledge profile for search engines and AI systems.
+            url: `${baseUrl}/ai-profile`,
+            lastModified: now,
+            changeFrequency: 'monthly' as const,
+            priority: 0.95,
+        },
+        {
             url: `${baseUrl}/About`,
             lastModified: now,
             changeFrequency: 'monthly' as const,
@@ -53,7 +60,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ]
 
     const projectRoutes = projects.map((project) => ({
-        url: `${baseUrl}/projects/${project.slug}`,
+        // Route directory is `app/Projects/[slug]`, and Next.js paths are case-sensitive.
+        url: `${baseUrl}/Projects/${project.slug}`,
         lastModified: now,
         changeFrequency: project.status === 'archive' ? 'yearly' as const : 'monthly' as const,
         priority: project.status === 'featured' ? 0.9 : project.status === 'current' ? 0.8 : 0.55,

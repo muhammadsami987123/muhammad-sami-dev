@@ -27,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = project.seoTitle ?? `${project.title} | Muhammad Sami`;
   const description = project.seoDescription ?? project.description;
-  const url = `${baseUrl}/projects/${project.slug}`;
+  // Route directory is `app/Projects/[slug]`, and Next.js paths are case-sensitive.
+  const url = `${baseUrl}/Projects/${project.slug}`;
   const image = project.image ?? '/new-profile.png';
 
   return {
