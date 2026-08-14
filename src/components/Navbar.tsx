@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
@@ -89,7 +89,16 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <div className="ml-3 pl-3 border-l border-zinc-300 dark:border-zinc-800">
+              <div className="ml-3 pl-3 flex items-center gap-2 border-l border-zinc-300 dark:border-zinc-800">
+                <a
+                  href="https://www.linkedin.com/in/muhammad-sami-3aa6102b8/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-full border border-zinc-300 text-zinc-700 hover:border-blue-500 hover:text-blue-600 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all active:scale-95"
+                >
+                  <FiLinkedin size={14} />
+                  LinkedIn
+                </a>
                 <a
                   href="https://github.com/muhammadsami987123"
                   target="_blank"
@@ -141,7 +150,7 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
+              <div className="mt-4 pt-4 flex flex-col gap-2 border-t border-zinc-200 dark:border-zinc-800">
                 <a
                   href="https://github.com/muhammadsami987123"
                   target="_blank"
@@ -149,6 +158,15 @@ export default function Navbar() {
                   className="w-full flex justify-center py-3 bg-zinc-900 text-white dark:bg-white dark:text-zinc-950 font-bold rounded-2xl text-sm shadow-md"
                 >
                   Visit GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/muhammad-sami-3aa6102b8/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl border border-zinc-200 text-zinc-700 dark:border-zinc-800 dark:text-zinc-300 font-bold text-sm"
+                >
+                  <FiLinkedin size={16} />
+                  LinkedIn
                 </a>
               </div>
             </div>

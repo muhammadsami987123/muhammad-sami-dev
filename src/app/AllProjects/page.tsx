@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FiSearch } from 'react-icons/fi';
+import { FiArrowRight, FiGithub, FiSearch } from 'react-icons/fi';
 
 import Background from '@/components/Background';
 import ProjectCard from '@/components/ProjectCard';
@@ -14,7 +14,6 @@ import {
   projectCategories,
   projects,
   searchProject,
-  topProjects,
   type ProjectCategory,
 } from '@/data/projects';
 
@@ -107,22 +106,6 @@ export default function AllProjects() {
           </div>
         </section>
 
-        {!isFiltering && (
-          <section className="mb-14" aria-labelledby="top-projects-heading">
-            <h2 id="top-projects-heading" className="text-xl font-bold text-zinc-950 dark:text-white sm:text-2xl">
-              Top Projects
-            </h2>
-            <p className="mt-1.5 text-sm text-zinc-600 dark:text-zinc-400">
-              The strongest examples of my current engineering work.
-            </p>
-            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {topProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} onOpen={openProject} />
-              ))}
-            </div>
-          </section>
-        )}
-
         <section aria-labelledby="all-projects-heading">
           <h2 id="all-projects-heading" className="text-xl font-bold text-zinc-950 dark:text-white sm:text-2xl">
             {isFiltering ? 'Results' : 'All Projects'}
@@ -163,6 +146,42 @@ export default function AllProjects() {
               </motion.div>
             )}
           </AnimatePresence>
+        </section>
+
+        <section
+          aria-labelledby="explore-more-heading"
+          className="mt-14 rounded-2xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm shadow-zinc-200/40 dark:border-zinc-800 dark:bg-zinc-950/80 dark:shadow-black/20 sm:p-8"
+        >
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
+                Open Source
+              </p>
+              <h2
+                id="explore-more-heading"
+                className="mt-2 text-xl font-bold text-zinc-950 dark:text-white sm:text-2xl"
+              >
+                Want to explore more?
+              </h2>
+              <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                More than 5,000+ projects and experiments are available on my GitHub.
+              </p>
+            </div>
+
+            <a
+              href="https://github.com/muhammadsami987123?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-zinc-950 px-5 text-[10px] font-black uppercase tracking-[0.14em] text-white transition-colors hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-white dark:text-zinc-950 dark:hover:bg-blue-500 dark:hover:text-white dark:focus-visible:ring-offset-black"
+            >
+              <FiGithub size={13} />
+              View All Projects
+              <FiArrowRight
+                size={13}
+                className="transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+              />
+            </a>
+          </div>
         </section>
       </main>
 
